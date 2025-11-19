@@ -6,60 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Phuong Tran – Honours BCom (BTM) student, researcher, case competition & hackathon participant." />
   <style>
-    .hero-right {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-photo-card {
-  position: relative;
-  max-width: 330px;
-  width: 100%;
-  border-radius: 28px;
-  padding: 1rem;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.75), 0 0 40px rgba(56,189,248,0.25);
-}
-
-.hero-photo-glow {
-  position: absolute;
-  inset: -25%;
-  background: radial-gradient(circle at top, rgba(56,189,248,0.35), transparent 60%);
-  pointer-events: none;
-}
-
-.hero-photo-frame {
-  padding: 4px;
-  border-radius: 22px;
-  background: linear-gradient(135deg,
-    rgba(56,189,248,0.9),
-    rgba(45,212,191,0.8),
-    rgba(59,130,246,0.8)
-  );
-}
-
-.hero-photo {
-  width: 100%;
-  border-radius: 18px;
-  object-fit: cover;
-}
-
-.hero-photo-meta {
-  text-align: center;
-  margin-top: 0.75rem;
-}
-
-.hero-photo-name {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.hero-photo-role {
-  font-size: 0.78rem;
-  color: #9ca3af;
-}
     :root {
       --bg: #0f172a;
       --bg-alt: #020617;
@@ -717,20 +663,43 @@
           </div>
         </div>
         <div class="hero-right">
-<div class="hero-photo-card">
-    <div class="hero-photo-glow"></div>
+          <aside class="hero-card" aria-label="Snapshot of highlights">
+            <div class="hero-card-header">
+              <div class="hero-card-title">At a glance</div>
+              <div class="hero-card-badge">2025 · Student & Builder</div>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-label">Competitions</div>
+                <div class="stat-value">10+<br /></div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Top 3 / Wins</div>
+                <div class="stat-value">Multiple</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Experience</div>
+                <div class="stat-value">Research · Digital</div>
+              </div>
+            </div>
+            <div class="timeline-mini">
+              <div class="timeline-mini-item">
+                <div class="timeline-mini-title">Research Assistant</div>
+                <div class="timeline-mini-meta">Tech governance & AI policy · Telfer</div>
+              </div>
+              <div class="timeline-mini-item">
+                <div class="timeline-mini-title">Digital Transformation Intern</div>
+                <div class="timeline-mini-meta">GreenVeil Packaging</div>
+              </div>
+              <div class="timeline-mini-item">
+                <div class="timeline-mini-title">Regional Mentor & Career Coach</div>
+                <div class="timeline-mini-meta">Supporting international & Telfer students</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-    <div class="hero-photo-frame">
-      <img src="profile.jpg" alt="Profile photo of Phuong Tran" class="hero-photo">
-    </div>
-
-    <div class="hero-photo-meta">
-      <div class="hero-photo-name">Phuong Tran</div>
-      <div class="hero-photo-role">BTM Student · Tech, Cybersecurity & Innovation</div>
-    </div>
-  </div>
-</div>
-      
       <!-- ABOUT / SUMMARY -->
       <section id="about">
         <div class="section-header">
@@ -738,7 +707,7 @@
             <span class="icon"></span> About me
           </h2>
         </div>
-        <div class="section-body">https://chatgpt.com/g/g-68665535e194819197585db434e55cca-ielts-task-1-instructor
+        <div class="section-body">
           <p style="margin-top: 0; font-size: 0.95rem; color: var(--text-muted);">
             I’m an Honours Bachelor of Commerce student (option in Business Technology Management) at the
             <strong>Telfer School of Management, University of Ottawa</strong>, graduating in 2028.
@@ -1398,4 +1367,3 @@
   </script>
 </body>
 </html>
-
