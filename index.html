@@ -609,6 +609,53 @@
       .container {
         padding-inline: 1rem;
       }
+          }
+
+    /* ✨ Interactive Hover Effects */
+
+    /* Buttons, Pills, Tags */
+    .contact-pill,
+    .btn,
+    .tag,
+    .chip,
+    .pill {
+      transition: all 0.2s ease;
+    }
+
+    .contact-pill:hover,
+    .btn:hover,
+    .tag:hover,
+    .chip:hover,
+    .pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    /* Cards */
+    .item-card,
+    .project-list .item-card,
+    .section-body {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .item-card:hover,
+    .project-list .item-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.18);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+
+    /* Navbar Links */
+    .nav-links a {
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: #e0f2fe;
+      transform: translateY(-2px);
+   
     }
   </style>
 </head>
@@ -1378,6 +1425,7 @@
   </script>
 </body>
 </html>
+
 
 
 
