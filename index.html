@@ -227,14 +227,71 @@
       justify-content: center;
     }
 
-    .hero-card {
+    .hero-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
       width: 100%;
       max-width: 360px;
+    }
+
+    .profile-photo {
+      border: none;
+      padding: 0;
+      background: none;
+      cursor: pointer;
+      border-radius: 999px;
+      position: relative;
+      outline: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .profile-photo::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      background: conic-gradient(from 180deg, #38bdf8, #a855f7, #ec4899, #38bdf8);
+      opacity: 0.7;
+      z-index: -1;
+      filter: blur(6px);
+    }
+
+    .profile-photo img {
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 3px solid rgba(15, 23, 42, 0.95);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .profile-photo:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
+    }
+
+    .profile-photo-caption {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .hero-card {
+      width: 100%;
       padding: 1.4rem 1.2rem 1.4rem;
       border-radius: var(--radius-xl);
       background: radial-gradient(circle at top, #020617, #020617 60%, #020617 100%);
       border: 1px solid rgba(148, 163, 184, 0.16);
       box-shadow: var(--shadow-soft);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
+      border-color: rgba(56, 189, 248, 0.4);
     }
 
     .hero-card-header {
@@ -304,6 +361,77 @@
     .timeline-mini-meta {
       font-size: 0.7rem;
       color: var(--text-muted);
+    }
+
+    /* PHOTO MODAL */
+    .photo-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
+    }
+
+    .photo-modal.open {
+      display: flex;
+    }
+
+    .photo-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
+      opacity: 0.98;
+    }
+
+    .photo-modal-content {
+      position: relative;
+      z-index: 61;
+      max-width: 420px;
+      width: 88%;
+      animation: modalIn 0.22s ease-out;
+    }
+
+    .photo-modal-content img {
+      width: 100%;
+      border-radius: 32px;
+      border: 2px solid rgba(56, 189, 248, 0.6);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.95);
+      object-fit: cover;
+    }
+
+    .photo-modal-close {
+      position: absolute;
+      top: -2rem;
+      right: 0.1rem;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    .photo-modal-close:hover {
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* SECTIONS */
@@ -405,6 +533,13 @@
       border-radius: 16px;
       padding: 0.9rem 0.9rem 0.85rem;
       border: 1px solid rgba(30, 64, 175, 0.6);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.95);
+      border-color: rgba(56, 189, 248, 0.45);
     }
 
     .item-header {
@@ -490,6 +625,7 @@
       border-radius: 999px;
       background: rgba(30, 64, 175, 0.9);
       color: #e0f2fe;
+      white-space: nowrap;
     }
 
     .project-meta {
@@ -506,10 +642,20 @@
       font-size: 0.8rem;
       color: #e0f2fe;
       opacity: 0.85;
+      transition: opacity 0.15s ease, transform 0.15s ease;
     }
 
     .project-link span.icon-arrow {
       font-size: 0.95rem;
+      transition: transform 0.15s ease;
+    }
+
+    .project-link:hover {
+      opacity: 1;
+    }
+
+    .project-link:hover .icon-arrow {
+      transform: translateX(3px);
     }
 
     /* INTERESTS */
@@ -553,6 +699,57 @@
       font-size: 0.82rem;
       color: var(--text-muted);
       background: rgba(15, 23, 42, 0.92);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .contact-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      color: #e5e7eb;
+    }
+
+    .contact-pill-icon .icon-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), rgba(15, 23, 42, 1));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      flex-shrink: 0;
+    }
+
+    .contact-pill-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .contact-text-main {
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .contact-text-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     footer {
@@ -583,6 +780,11 @@
       .section-body {
         padding: 1.2rem 1rem;
       }
+
+      .photo-modal-close {
+        top: -2.4rem;
+        right: 0.2rem;
+      }
     }
 
     @media (max-width: 640px) {
@@ -608,6 +810,11 @@
 
       .container {
         padding-inline: 1rem;
+      }
+
+      .profile-photo img {
+        width: 210px;
+        height: 210px;
       }
     }
   </style>
@@ -663,40 +870,51 @@
           </div>
         </div>
         <div class="hero-right">
-          <aside class="hero-card" aria-label="Snapshot of highlights">
-            <div class="hero-card-header">
-              <div class="hero-card-title">At a glance</div>
-              <div class="hero-card-badge">2025 · Student & Builder</div>
+          <div class="hero-media">
+            <!-- INTERACTIVE PROFILE PHOTO -->
+            <button class="profile-photo" aria-label="Open larger photo of Phuong Tran" type="button">
+              <img src="profile.jpg" alt="Portrait of Phuong Tran" />
+            </button>
+            <div class="profile-photo-caption">
+              Click to view a larger photo.
             </div>
-            <div class="stats">
-              <div class="stat">
-                <div class="stat-label">Competitions</div>
-                <div class="stat-value">10+<br /></div>
+
+            <!-- EXISTING HERO CARD (unchanged content) -->
+            <aside class="hero-card" aria-label="Snapshot of highlights">
+              <div class="hero-card-header">
+                <div class="hero-card-title">At a glance</div>
+                <div class="hero-card-badge">2025 · Student & Builder</div>
               </div>
-              <div class="stat">
-                <div class="stat-label">Top 3 / Wins</div>
-                <div class="stat-value">Multiple</div>
+              <div class="stats">
+                <div class="stat">
+                  <div class="stat-label">Competitions</div>
+                  <div class="stat-value">10+<br /></div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Top 3 / Wins</div>
+                  <div class="stat-value">Multiple</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Experience</div>
+                  <div class="stat-value">Research · Digital</div>
+                </div>
               </div>
-              <div class="stat">
-                <div class="stat-label">Experience</div>
-                <div class="stat-value">Research · Digital</div>
+              <div class="timeline-mini">
+                <div class="timeline-mini-item">
+                  <div class="timeline-mini-title">Research Assistant</div>
+                  <div class="timeline-mini-meta">Tech governance & AI policy · Telfer</div>
+                </div>
+                <div class="timeline-mini-item">
+                  <div class="timeline-mini-title">Digital Transformation Intern</div>
+                  <div class="timeline-mini-meta">GreenVeil Packaging</div>
+                </div>
+                <div class="timeline-mini-item">
+                  <div class="timeline-mini-title">Regional Mentor & Career Coach</div>
+                  <div class="timeline-mini-meta">Supporting international & Telfer students</div>
+                </div>
               </div>
-            </div>
-            <div class="timeline-mini">
-              <div class="timeline-mini-item">
-                <div class="timeline-mini-title">Research Assistant</div>
-                <div class="timeline-mini-meta">Tech governance & AI policy · Telfer</div>
-              </div>
-              <div class="timeline-mini-item">
-                <div class="timeline-mini-title">Digital Transformation Intern</div>
-                <div class="timeline-mini-meta">GreenVeil Packaging</div>
-              </div>
-              <div class="timeline-mini-item">
-                <div class="timeline-mini-title">Regional Mentor & Career Coach</div>
-                <div class="timeline-mini-meta">Supporting international & Telfer students</div>
-              </div>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 
@@ -876,48 +1094,87 @@
         </div>
       </section>
 
-      <!-- PROJECTS (product / innovation) -->
+      <!-- FEATURED / RECENT PROJECTS -->
       <section id="projects">
         <div class="section-header">
           <h2 class="section-title">
             <span class="icon"></span> RECENT PROJECTS
           </h2>
           <div class="section-subtitle">
-            Building practical solutions across healthcare, tourism, cybersecurity and sustainability.
+            Featured projects and challenges across AI equity, public safety, tourism and digital networking.
           </div>
         </div>
         <div class="section-body">
           <div class="project-list">
-            <!-- Canadian HealthSync -->
+            <!-- AI Equity Data Challenge -->
             <article class="item-card">
               <div class="project-title-line">
-                <div class="project-title">AI-Driven Patient Record System</div>
-                <div class="project-badge">Finalist</div>
+                <div class="project-title">AI Equity Data Challenge – Phase 1</div>
+                <div class="project-badge">Selected Project</div>
               </div>
               <div class="project-meta">
-                Canadian HealthSync Student Innovation Challenge · Jan. 2024 · Virtual (Global)
+                AI Equity Data Challenge (Agoraise & Government of Canada) · Sept 2 – Oct 5, 2025 · Online
               </div>
               <div class="item-tags">
-                <span class="tag tag--accent">Healthcare</span>
-                <span class="tag">AI & Automation</span>
-                <span class="tag">Regulatory Compliance</span>
+                <span class="tag tag--accent">AI & Labour Markets</span>
+                <span class="tag">Equity & Inclusion</span>
+                <span class="tag">Data Storytelling</span>
               </div>
               <ul class="item-bullets">
                 <li>
-                  Designed an AI-driven patient record system with FHIR compliance, PIPEDA-aligned encryption,
-                  and OAuth&nbsp;2.0 access controls.
+                  Analyze Labour Market Information (LMI) and complementary datasets to explore how AI is expected
+                  to reshape the job market by industry and region.
                 </li>
                 <li>
-                  Reduced administrative burden through AI chatbots and automated prescription systems while
-                  maintaining security and privacy in regulated environments.
+                  Investigate demographic impacts of AI adoption, including how race, gender, income level and
+                  geography influence access to emerging opportunities.
+                </li>
+                <li>
+                  Map current trends in workforce diversity, wage equity and skills gaps to identify which groups
+                  are most likely to benefit from AI and which face barriers.
+                </li>
+                <li>
+                  Deliver a data-driven visual summary (≤5-page PDF) that tells a clear visual story of disparities,
+                  patterns and projections related to AI, diversity and economic resilience, with transparent sourcing.
                 </li>
               </ul>
               <a href="#" class="project-link">
-                <span class="icon-arrow">↗</span> View project PDF (coming soon)
+                <span class="icon-arrow">↗</span> View data story (coming soon)
               </a>
             </article>
 
-            <!-- Tourism / Planit -->
+            <!-- uOttaHack – AI Urgency Detection -->
+            <article class="item-card">
+              <div class="project-title-line">
+                <div class="project-title">
+                  AI Urgency Detection for 911 Calls
+                </div>
+                <div class="project-badge">Best Collaboration</div>
+              </div>
+              <div class="project-meta">
+                uOttaHack 7 · Jan. 2024 · Ottawa, ON
+              </div>
+              <div class="item-tags">
+                <span class="tag tag--accent">Hackathon</span>
+                <span class="tag">LLaMA & Whisper</span>
+                <span class="tag">Public Safety</span>
+              </div>
+              <ul class="item-bullets">
+                <li>
+                  Engineered an urgency-detection system using LLaMA and Whisper voice recognition to help reduce
+                  non-urgent 911 call load and improve triage.
+                </li>
+                <li>
+                  Implemented granular consent tiers for data sharing to respect privacy and align with citizen-
+                  government interaction principles.
+                </li>
+              </ul>
+              <a href="#" class="project-link">
+                <span class="icon-arrow">↗</span> Demo / documentation (coming soon)
+              </a>
+            </article>
+
+            <!-- Planit – Smart Tourism Platform -->
             <article class="item-card">
               <div class="project-title-line">
                 <div class="project-title">Planit – Smart Tourism Platform</div>
@@ -946,40 +1203,11 @@
               </a>
             </article>
 
-            <!-- Sustainability idea -->
-            <article class="item-card">
-              <div class="project-title-line">
-                <div class="project-title">Leaf-Based Biodegradable Utensils</div>
-              </div>
-              <div class="project-meta">
-                Ideas Lab: Sustainability, Entrepreneur Hub · Oct. 2024 · Ottawa, ON
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Sustainability</span>
-                <span class="tag">Materials Research</span>
-                <span class="tag">Business Model</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Co-developed a business model replacing plastic utensils with 100% biodegradable, leaf-based
-                  alternatives that decompose faster than paper.
-                </li>
-                <li>
-                  Conducted research on raw materials and processing methods to evaluate environmental impact
-                  and feasibility.
-                </li>
-              </ul>
-              <a href="#" class="project-link">
-                <span class="icon-arrow">↗</span> View concept document (coming soon)
-              </a>
-            </article>
-
             <!-- Tap-to-Connect -->
             <article class="item-card">
               <div class="project-title-line">
                 <div class="project-title">Tap-to-Connect – NFC Networking Solution</div>
                 <div class="project-badge">Top Votes</div>
-                <div class="project-badge">Leader</div>
               </div>
               <div class="project-meta">
                 The Crunch – uOttawa, Carleton, Algonquin, La Cité · Nov. 2024 · Ottawa, ON
@@ -1054,38 +1282,7 @@
               </a>
             </article>
 
-            <!-- uOttaHack 7 -->
-            <article class="item-card">
-              <div class="project-title-line">
-                <div class="project-title">
-                  AI Urgency Detection for 911 Calls
-                </div>
-                <div class="project-badge">Best Collaboration</div>
-              </div>
-              <div class="project-meta">
-                uOttaHack 7 · Jan. 2024 · Ottawa, ON
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Hackathon</span>
-                <span class="tag">LLaMA & Whisper</span>
-                <span class="tag">Public Safety</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Engineered an urgency-detection system using LLaMA and Whisper voice recognition to reduce
-                  non-urgent 911 call load.
-                </li>
-                <li>
-                  Implemented granular consent tiers for data sharing to respect privacy and align with citizen-
-                  government interaction principles.
-                </li>
-              </ul>
-              <a href="#" class="project-link">
-                <span class="icon-arrow">↗</span> Demo / documentation (coming soon)
-              </a>
-            </article>
-
-            <!-- Technation CyberCare Defender -->
+            <!-- CyberCare Defender -->
             <article class="item-card">
               <div class="project-title-line">
                 <div class="project-title">
@@ -1120,6 +1317,63 @@
               </a>
             </article>
 
+            <!-- Canadian HealthSync -->
+            <article class="item-card">
+              <div class="project-title-line">
+                <div class="project-title">AI-Driven Patient Record System</div>
+                <div class="project-badge">Finalist</div>
+              </div>
+              <div class="project-meta">
+                Canadian HealthSync Student Innovation Challenge · Jan. 2024 · Virtual (Global)
+              </div>
+              <div class="item-tags">
+                <span class="tag tag--accent">Healthcare</span>
+                <span class="tag">AI & Automation</span>
+                <span class="tag">Regulatory Compliance</span>
+              </div>
+              <ul class="item-bullets">
+                <li>
+                  Designed an AI-driven patient record system with FHIR compliance, PIPEDA-aligned encryption,
+                  and OAuth&nbsp;2.0 access controls.
+                </li>
+                <li>
+                  Reduced administrative burden through AI chatbots and automated prescription systems while
+                  maintaining security and privacy in regulated environments.
+                </li>
+              </ul>
+              <a href="#" class="project-link">
+                <span class="icon-arrow">↗</span> View project PDF (coming soon)
+              </a>
+            </article>
+
+            <!-- Leaf-Based Biodegradable Utensils -->
+            <article class="item-card">
+              <div class="project-title-line">
+                <div class="project-title">Leaf-Based Biodegradable Utensils</div>
+              </div>
+              <div class="project-meta">
+                Ideas Lab: Sustainability, Entrepreneur Hub · Oct. 2024 · Ottawa, ON
+              </div>
+              <div class="item-tags">
+                <span class="tag tag--accent">Sustainability</span>
+                <span class="tag">Materials Research</span>
+                <span class="tag">Business Model</span>
+              </div>
+              <ul class="item-bullets">
+                <li>
+                  Co-developed a business model replacing plastic utensils with 100% biodegradable, leaf-based
+                  alternatives that decompose faster than paper.
+                </li>
+                <li>
+                  Conducted research on raw materials and processing methods to evaluate environmental impact
+                  and feasibility.
+                </li>
+              </ul>
+              <a href="#" class="project-link">
+                <span class="icon-arrow">↗</span> View concept document (coming soon)
+              </a>
+            </article>
+
             <!-- L'Oréal Brandstorm – ScalpSavvy -->
             <article class="item-card">
               <div class="project-title-line">
@@ -1149,6 +1403,40 @@
               </ul>
               <a href="#" class="project-link">
                 <span class="icon-arrow">↗</span> Pitch deck / demo (coming soon)
+              </a>
+            </article>
+
+            <!-- CFA Institute Research Challenge -->
+            <article class="item-card">
+              <div class="project-title-line">
+                <div class="project-title">
+                  CFA Institute Research Challenge – Equity Research Team
+                </div>
+              </div>
+              <div class="project-meta">
+                CFA Institute Research Challenge · 2025–2026 · Representing University of Ottawa
+              </div>
+              <div class="item-tags">
+                <span class="tag tag--accent">Equity Research</span>
+                <span class="tag">Financial Analysis</span>
+                <span class="tag">Ethics & Valuation</span>
+              </div>
+              <ul class="item-bullets">
+                <li>
+                  Participate in a global equity research competition, assuming the role of a research analyst and
+                  producing a professional-grade equity report on a publicly traded company.
+                </li>
+                <li>
+                  Collaborate with a team of university students, a faculty advisor and an industry mentor to refine
+                  analytical, valuation, report writing and presentation skills.
+                </li>
+                <li>
+                  Represent the University of Ottawa in local-level competition, with the opportunity to advance
+                  through sub-regional, regional and global rounds.
+                </li>
+              </ul>
+              <a href="#" class="project-link">
+                <span class="icon-arrow">↗</span> Research report / slides (coming soon)
               </a>
             </article>
           </div>
@@ -1330,13 +1618,36 @@
                 If you’d like to collaborate, chat about a competition, or discuss an opportunity, feel free to reach out.
               </p>
               <div class="contact-pill-row">
-                <!-- TODO: update with your real links -->
-                <a href="mailto:your.email@gmail.com" class="contact-pill">
-                  Email · phtranworkmail@gmail.com
+                <!-- EMAIL -->
+                <a href="mailto:phtranworkmail@gmail.com" class="contact-pill contact-pill-icon">
+                  <span class="icon-circle" aria-hidden="true">
+                    <!-- Simple mail icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                      <polyline points="4 6 12 12 20 6"></polyline>
+                    </svg>
+                  </span>
+                  <span class="contact-text-main">Email</span>
+                  <span class="contact-text-sub">phtranworkmail@gmail.com</span>
+                  <span class="visually-hidden">Email · phtranworkmail@gmail.com</span>
                 </a>
-                <a href="https://www.linkedin.com/" class="contact-pill">
-                  LinkedIn · https://www.linkedin.com/in/phuongtran0204/
+
+                <!-- LINKEDIN -->
+                <a href="https://www.linkedin.com/in/phuongtran0204/" target="_blank" rel="noopener noreferrer" class="contact-pill contact-pill-icon">
+                  <span class="icon-circle" aria-hidden="true">
+                    <!-- Simple LinkedIn icon -->
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8.11h4.6V23H.2V8.11zM8.54 8.11h4.41v2.03h.06c.61-1.16 2.11-2.38 4.34-2.38 4.64 0 5.49 3.05 5.49 7.02V23h-4.6v-6.54c0-1.56-.03-3.57-2.18-3.57-2.18 0-2.52 1.7-2.52 3.45V23h-4.6V8.11z"/>
+                    </svg>
+                  </span>
+                  <span class="contact-text-main">LinkedIn</span>
+                  <span class="contact-text-sub">@phuongtran0204</span>
+                  <span class="visually-hidden">
+                    LinkedIn · https://www.linkedin.com/in/phuongtran0204/
+                  </span>
                 </a>
+
+                <!-- RESUME -->
                 <a href="#" class="contact-pill">
                   Download Résumé (PDF) · Coming soon
                 </a>
@@ -1362,11 +1673,52 @@
     </footer>
   </div>
 
+  <!-- PHOTO MODAL -->
+  <div class="photo-modal" id="photo-modal" aria-hidden="true">
+    <div class="photo-modal-backdrop"></div>
+    <div class="photo-modal-content" role="dialog" aria-modal="true" aria-label="Portrait of Phuong Tran">
+      <button class="photo-modal-close" type="button" aria-label="Close photo">&times;</button>
+      <img src="profile.jpg" alt="Portrait of Phuong Tran" />
+    </div>
+  </div>
+
   <script>
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Profile photo modal interactivity
+    (function () {
+      const profileBtn = document.querySelector(".profile-photo");
+      const modal = document.getElementById("photo-modal");
+      const closeBtn = modal ? modal.querySelector(".photo-modal-close") : null;
+
+      if (!profileBtn || !modal || !closeBtn) return;
+
+      const openModal = () => {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+      };
+
+      const closeModal = () => {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+      };
+
+      profileBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (e) => {
+        if (e.target.classList.contains("photo-modal-backdrop")) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("open")) {
+          closeModal();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
-
-
