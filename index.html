@@ -609,7 +609,42 @@
       .container {
         padding-inline: 1rem;
       }
-          }
+          
+/* Horizontal Slider */
+.slider-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.slider {
+  display: flex;
+  gap: 1.2rem;
+  padding-bottom: 0.4rem;
+}
+
+.slider-item {
+  min-width: 300px;
+  flex: 0 0 auto;
+}
+
+.view-btn {
+  margin-top: 0.7rem;
+  background: rgba(56,189,248,0.15);
+  border-color: rgba(56,189,248,0.3);
+  font-size: 0.78rem;
+  transition: 0.2s;
+}
+
+.view-btn:hover {
+  background: rgba(56,189,248,0.3);
+  transform: translateY(-2px);
+}
 
     /* ✨ Interactive Hover Effects — Paste here */
 
@@ -1028,6 +1063,7 @@
 
 
 <!-- MORE PROJECTS -->
+<!-- MORE PROJECTS (Horizontal Scroll Slider) -->
 <section id="more-projects">
   <div class="section-header">
     <h2 class="section-title">
@@ -1038,115 +1074,131 @@
     </div>
   </div>
 
-  <div class="section-body">
-    <div class="project-list">
-
+  <div class="section-body slider-container">
+    <div class="slider">
+      
       <!-- CFA Challenge -->
-      <article class="item-card">
+      <article class="item-card slider-item">
         <div class="project-title-line">
           <div class="project-title">CFA Research Challenge 2024</div>
+          <div class="project-badge">📘 Representing uOttawa</div>
         </div>
-        <div class="project-meta">
-          Representing the University of Ottawa
-        </div>
+        <div class="project-meta">CFA Institute · Equity Research</div>
         <div class="item-tags">
           <span class="tag tag--accent">Finance</span>
+          <span class="tag">Valuation</span>
           <span class="tag">Equity Research</span>
         </div>
         <ul class="item-bullets">
-          <li>Conducted valuation modelling, risk analysis, and industry research for a public company.</li>
-          <li>Collaborated on writing an investment report aligned with CFA Institute standards.</li>
+          <li>Represented the University of Ottawa in a global-standard equity research competition.</li>
+          <li>Performed valuation modelling, industry research, and risk assessment.</li>
+          <li>Co-authored a research report aligned with CFA Institute standards.</li>
         </ul>
+        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
       </article>
 
-      <!-- HealthSync -->
-      <article class="item-card">
+      <!-- HealthSync Finalist -->
+      <article class="item-card slider-item">
         <div class="project-title-line">
-          <div class="project-title">AI-Driven Patient Record System</div>
+          <div class="project-title">AI Patient Record System</div>
+          <div class="project-badge">🏅 Finalist</div>
         </div>
-        <div class="project-meta">
-          Canadian HealthSync Innovation Challenge
-        </div>
+        <div class="project-meta">Canadian HealthSync Innovation Challenge</div>
         <div class="item-tags">
           <span class="tag tag--accent">Healthcare</span>
-          <span class="tag">AI & Automation</span>
+          <span class="tag">Automation</span>
+          <span class="tag">FHIR</span>
         </div>
         <ul class="item-bullets">
-          <li>Designed an automated patient record system with FHIR compliance and PIPEDA-aligned encryption.</li>
+          <li>Designed a patient record system using FHIR + PIPEDA compliance.</li>
+          <li>Encrypted data flows + OAuth 2.0 access control system.</li>
+          <li>Proposed chatbot-assisted intake and prescription flows.</li>
         </ul>
+        <a class="btn view-btn">📄 View PDF (Coming Soon)</a>
       </article>
 
       <!-- L'Oréal Brandstorm -->
-      <article class="item-card">
+      <article class="item-card slider-item">
         <div class="project-title-line">
           <div class="project-title">ScalpSavvy – AI Scalp Health Platform</div>
+          <div class="project-badge">🧪 Innovation Case</div>
         </div>
-        <div class="project-meta">
-          L’Oréal Brandstorm 2025
-        </div>
+        <div class="project-meta">L’Oréal Brandstorm 2025</div>
         <div class="item-tags">
-          <span class="tag tag--accent">Brand Innovation</span>
+          <span class="tag tag--accent">AI</span>
+          <span class="tag">Computer Vision</span>
           <span class="tag">UI/UX</span>
         </div>
         <ul class="item-bullets">
-          <li>Designed a sleek, male-oriented UI with AI scalp analysis and personalized recommendations.</li>
+          <li>Created a Figma UI for an AI-powered scalp analysis tool.</li>
+          <li>Designed male-targeted UI + brand experience.</li>
+          <li>Integrated Python/TensorFlow CV concept + FastAPI backend model.</li>
         </ul>
+        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
       </article>
 
-      <!-- NFC Tap to Connect -->
-      <article class="item-card">
+      <!-- Tap to Connect -->
+      <article class="item-card slider-item">
         <div class="project-title-line">
-          <div class="project-title">Tap-to-Connect – NFC Networking Solution</div>
+          <div class="project-title">Tap-to-Connect NFC</div>
+          <div class="project-badge">🥇 Highest Votes</div>
         </div>
-        <div class="project-meta">
-          uOttawa · Carleton · Algonquin · La Cité
-        </div>
+        <div class="project-meta">The Crunch – uOttawa, Carleton, Algonquin, La Cité</div>
         <div class="item-tags">
           <span class="tag tag--accent">NFC</span>
-          <span class="tag">Professional Networking</span>
+          <span class="tag">Entrepreneurship</span>
+          <span class="tag">Pitching</span>
         </div>
         <ul class="item-bullets">
-          <li>Created an NFC solution for instant sharing of professional profiles at events.</li>
+          <li>Earned top public vote among 14+ teams.</li>
+          <li>Built NFC-based instant profile sharing tool.</li>
+          <li>Delivered top-ranked 30-second pitch.</li>
         </ul>
+        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
       </article>
 
       <!-- Sustainability -->
-      <article class="item-card">
+      <article class="item-card slider-item">
         <div class="project-title-line">
           <div class="project-title">Leaf-Based Biodegradable Utensils</div>
+          <div class="project-badge">🌿 Concept Development</div>
         </div>
-        <div class="project-meta">
-          Sustainability Ideas Lab
-        </div>
+        <div class="project-meta">Ideas Lab: Sustainability</div>
         <div class="item-tags">
-          <span class="tag tag--accent">Sustainability</span>
-          <span class="tag">Materials Research</span>
+          <span class="tag tag--accent">Eco Design</span>
+          <span class="tag">Sustainability</span>
         </div>
         <ul class="item-bullets">
-          <li>Developed a concept for fast-decomposing leaf-based eco-friendly utensils.</li>
+          <li>Proposed leaf-based utensils replacing single-use plastics.</li>
+          <li>Research on rapid decomposition + eco-friendly sourcing.</li>
+          <li>Explored pricing + supply chain feasibility.</li>
         </ul>
+        <a class="btn view-btn">📄 View PDF (Coming Soon)</a>
       </article>
 
-      <!-- PSPC Supply Chain -->
-      <article class="item-card">
+      <!-- PSPC -->
+      <article class="item-card slider-item">
         <div class="project-title-line">
-          <div class="project-title">PSPC Supply Chain Strategy Case</div>
+          <div class="project-title">PSPC Supply Chain Strategy</div>
+          <div class="project-badge">🥉 3rd Place</div>
         </div>
-        <div class="project-meta">
-          uOCA Consulting Case Competition
-        </div>
+        <div class="project-meta">uOCA Case Competition · PSPC</div>
         <div class="item-tags">
-          <span class="tag tag--accent">Case Competition</span>
-          <span class="tag">Supply Chain</span>
+          <span class="tag tag--accent">Supply Chain</span>
+          <span class="tag">Federal Policy</span>
         </div>
         <ul class="item-bullets">
-          <li>Proposed federal supply-chain resiliency strategies amid geopolitical disruption.</li>
+          <li>Developed federal supply-chain resiliency recommendations.</li>
+          <li>Analyzed risks + vendor diversification during geopolitical tension.</li>
+          <li>Presented structured recommendations under time pressure.</li>
         </ul>
+        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
       </article>
 
     </div>
   </div>
 </section>
+
 
 
       <!-- VOLUNTEERING -->
@@ -1368,4 +1420,5 @@
   </script>
 </body>
 </html>
+
 
