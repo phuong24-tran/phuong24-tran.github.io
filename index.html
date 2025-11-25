@@ -4,38 +4,52 @@
   <meta charset="UTF-8" />
   <title>Phuong Tran | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Phuong Tran – Honours BCom (BTM) student, researcher, case competition & hackathon participant." />
+  <meta name="description"
+        content="Portfolio of Phuong Tran – Business Technology Management student, researcher, case competition & hackathon participant." />
+
+  <!-- ====== BASE STYLES ====== -->
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
+      --bg: #020617;
+      --bg-alt: #0b1220;
+      --bg-soft: #020617;
       --card-bg: #020617;
       --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.1);
+      --accent-2: #a855f7;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --accent-soft-2: rgba(168, 85, 247, 0.18);
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
-      --border-subtle: #1e293b;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.8);
-      --radius-lg: 18px;
-      --radius-xl: 28px;
-      --max-width: 1080px;
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.95);
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+      --nav-height: 68px;
+      --max-width: 1120px;
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 40%, #000000 100%);
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #1d2956 0, transparent 55%),
+        radial-gradient(circle at bottom right, #0369a1 0, transparent 55%),
+        var(--bg);
       color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -43,123 +57,158 @@
       display: block;
     }
 
-    .page {
-      min-height: 100vh;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .container {
+    /* ====== LAYOUT WRAPPER ====== */
+
+    .shell {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 1.5rem 1.25rem 4rem;
+      padding: 1.25rem 1.25rem 4rem;
     }
 
-    /* NAVBAR */
+    /* ====== NAVBAR ====== */
     header {
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7), transparent);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+          to bottom,
+          rgba(15, 23, 42, 0.94),
+          rgba(15, 23, 42, 0.75),
+          transparent
+        );
+      border-bottom: 1px solid rgba(15, 23, 42, 0.8);
     }
 
-    .nav {
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.75rem 1.25rem 0.75rem;
+      padding: 0 1.25rem;
     }
 
     .logo {
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
     }
 
     .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      font-size: 0.85rem;
-    }
-
-    .nav-links a {
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      transition: all 0.18s ease;
-      background: transparent;
-    }
-
-    .nav-links a:hover {
-      border-color: var(--accent-soft);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-main);
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.6fr);
-      gap: 2rem;
-      align-items: center;
-      padding: 2.5rem 0 2rem;
-    }
-
-    .hero-left {
-      padding-right: 0.5rem;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.18rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.07), rgba(15, 23, 42, 0.9));
-    }
-
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
-      margin: 0 0 0.6rem;
-      letter-spacing: -0.03em;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(120deg, #38bdf8, #a855f7, #ec4899);
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
+    nav ul {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width var(--transition-med);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #f9fafb;
+    }
+
+    nav a.is-active::after {
+      width: 100%;
+    }
+
+    /* ====== HERO ====== */
+
+    .hero {
+      padding-top: 2.25rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-tagline-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.35);
+    }
+
+    .hero-title {
+      font-size: clamp(2.25rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #38bdf8, #c084fc, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      font-size: 0.97rem;
+      line-height: 1.7;
       color: var(--text-muted);
       max-width: 34rem;
       margin-bottom: 1.4rem;
     }
 
-    .hero-tags {
+    .hero-text strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
@@ -167,1258 +216,1283 @@
     }
 
     .pill {
-      font-size: 0.78rem;
-      padding: 0.28rem 0.7rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.42);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.9));
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
     }
 
-    .pill--accent {
-      border-color: var(--accent-soft);
-      background: rgba(8, 47, 73, 0.8);
-      color: #e0f2fe;
+    .pill-alt {
+      border-color: rgba(148, 163, 184, 0.25);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-muted);
+      box-shadow: none;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
 
     .btn {
+      position: relative;
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.55rem 1.1rem;
-      font-size: 0.86rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-main);
+      gap: 0.5rem;
+      border: none;
       cursor: pointer;
-      transition: all 0.18s ease;
-      text-decoration: none;
+      overflow: hidden;
+      transform-origin: center;
+      transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
     }
 
     .btn-primary {
-      border-color: transparent;
-      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
-      color: #0b1220;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #f9fafb;
+      box-shadow: 0 18px 35px rgba(59, 130, 246, 0.5);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 45px rgba(56, 189, 248, 0.55);
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid rgba(148, 163, 184, 0.55);
     }
 
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.98);
-      border-color: rgba(148, 163, 184, 0.7);
+    .btn span.icon {
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    .btn:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 14px 24px rgba(15, 23, 42, 0.8);
     }
 
     .hero-right {
       display: flex;
-      align-items: stretch;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .hero-photo-wrap {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      padding: 4px;
+      background:
+        conic-gradient(from 210deg,
+          rgba(56, 189, 248, 0.1),
+          rgba(168, 85, 247, 0.9),
+          rgba(56, 189, 248, 0.1));
+      display: flex;
+      align-items: center;
       justify-content: center;
+      box-shadow: 0 26px 70px rgba(15, 23, 42, 0.95);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: inherit;
+      border: 1px dashed rgba(148, 163, 184, 0.55);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #0f172a;
     }
 
     .hero-card {
       width: 100%;
       max-width: 360px;
-      padding: 1.4rem 1.2rem 1.4rem;
-      border-radius: var(--radius-xl);
-      background: radial-gradient(circle at top, #020617, #020617 60%, #020617 100%);
-      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 26px;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 46%),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
+      border: 1px solid rgba(148, 163, 184, 0.45);
       box-shadow: var(--shadow-soft);
+      padding: 1.15rem 1.15rem 1.1rem;
+      display: grid;
+      grid-template-columns: 1.05fr 1.4fr;
+      gap: 0.9rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-card-header {
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.25), transparent 52%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-card-main {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .hero-card-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(226, 232, 240, 0.85);
+    }
+
+    .hero-card-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.77rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+    }
+
+    .hero-card-pill strong {
+      color: #f9fafb;
+    }
+
+    .hero-card-metric-col {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      color: rgba(209, 213, 219, 0.9);
+    }
+
+    .hero-metric-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
+      gap: 0.75rem;
+      align-items: baseline;
     }
 
-    .hero-card-title {
-      font-size: 0.9rem;
+    .hero-metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+    }
+
+    .hero-metric-value {
       font-weight: 600;
     }
 
-    .hero-card-badge {
-      font-size: 0.7rem;
-      padding: 0.16rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(21, 94, 117, 0.9);
-      color: #e0f2fe;
+    .hero-card-roles {
+      margin-top: 0.4rem;
+      padding-top: 0.4rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      font-size: 0.72rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.65rem;
-      margin-bottom: 1rem;
-      margin-top: 0.6rem;
+    .hero-card-roles strong {
+      color: #f9fafb;
     }
 
-    .stat {
-      padding: 0.55rem 0.6rem;
-      border-radius: 16px;
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
-      border: 1px solid rgba(30, 64, 175, 0.7);
-    }
-
-    .stat-label {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      margin-bottom: 0.18rem;
-    }
-
-    .stat-value {
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .timeline-mini {
-      border-left: 1px dashed rgba(148, 163, 184, 0.4);
-      padding-left: 0.75rem;
-      margin-top: 0.8rem;
-    }
-
-    .timeline-mini-item {
-      margin-bottom: 0.55rem;
-    }
-
-    .timeline-mini-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .timeline-mini-title {
-      font-size: 0.8rem;
-    }
-
-    .timeline-mini-meta {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    /* SECTIONS */
-    main {
-      margin-top: 0.75rem;
-    }
+    /* ====== SECTIONS ====== */
 
     section {
-      margin-top: 2.6rem;
+      margin-top: 2.5rem;
     }
 
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1.4rem;
       gap: 0.75rem;
+      margin-bottom: 1.1rem;
     }
 
     .section-title {
-      font-size: 1.3rem;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .section-title span.icon {
-      width: 0.4rem;
-      height: 1.4rem;
-      border-radius: 999px;
-      background: linear-gradient(to bottom, #38bdf8, #a855f7);
-      display: inline-block;
-    }
-
-    .section-subtitle {
-      font-size: 0.8rem;
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--text-muted);
+    }
+
+    .section-caption {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      max-width: 25rem;
     }
 
     .section-body {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
       border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem;
-      border: 1px solid rgba(30, 64, 175, 0.6);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.92));
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.3rem 1.3rem;
     }
 
-    /* EDUCATION */
-    .edu-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.3rem 1rem;
-      margin-bottom: 0.4rem;
-    }
+    /* About */
 
-    .edu-degree {
-      font-weight: 600;
-    }
-
-    .edu-meta {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.5rem 0 0.9rem;
-    }
-
-    .chip {
-      font-size: 0.74rem;
-      padding: 0.22rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-muted);
-    }
-
-    ul.compact {
-      padding-left: 1.1rem;
-      margin: 0.2rem 0 0;
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    /* EXPERIENCE & LISTS */
-    .list-grid {
+    .about-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr);
-      gap: 1rem;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 1.65rem;
     }
 
-    .item-card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+    .about-text {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .about-text p + p {
+      margin-top: 0.8rem;
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .about-item {
+      padding: 0.7rem 0.75rem;
       border-radius: 16px;
-      padding: 0.9rem 0.9rem 0.85rem;
-      border: 1px solid rgba(30, 64, 175, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.98);
     }
 
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.35rem;
+    .about-item-title {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(209, 213, 219, 0.9);
+      margin-bottom: 0.2rem;
     }
 
-    .item-title {
-      font-size: 0.98rem;
+    .about-item p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    /* Experience */
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+      gap: 1rem;
+      padding: 0.9rem 0.9rem;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.05), transparent 55%),
+        rgba(15, 23, 42, 0.96);
+      position: relative;
+      overflow: hidden;
+      transition:
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .timeline-item:hover {
+      border-color: rgba(56, 189, 248, 0.65);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+        rgba(15, 23, 42, 0.98);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.9);
+    }
+
+    .timeline-role {
       font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 0.1rem;
     }
 
-    .item-meta {
+    .timeline-org {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-meta {
       font-size: 0.78rem;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
     }
 
-    .item-org {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
-
-    .item-tags {
+    .timeline-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
-      margin-bottom: 0.4rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
     }
 
-    .tag {
-      font-size: 0.7rem;
-      padding: 0.18rem 0.55rem;
+    .timeline-tag {
+      padding: 0.2rem 0.55rem;
       border-radius: 999px;
       background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       color: var(--text-muted);
     }
 
-    .tag--accent {
-      border-color: var(--accent-soft);
-      background: rgba(8, 47, 73, 0.9);
-      color: #e0f2fe;
-    }
-
-    ul.item-bullets {
-      padding-left: 1.1rem;
-      margin: 0;
+    .timeline-body {
       font-size: 0.86rem;
       color: var(--text-muted);
+      line-height: 1.7;
     }
 
-    .item-bullets li + li {
-      margin-top: 0.2rem;
+    .timeline-body ul {
+      padding-left: 1rem;
+      margin: 0;
     }
 
-    /* PROJECTS */
-    .project-list {
+    .timeline-body li + li {
+      margin-top: 0.25rem;
+    }
+
+    /* Projects */
+
+    .project-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
 
-    .project-title-line {
+    .project-card {
+      position: relative;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 60%),
+        rgba(15, 23, 42, 0.98);
+      padding: 0.95rem 0.95rem 0.9rem;
       display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
-      align-items: baseline;
-      margin-bottom: 0.25rem;
+      flex-direction: column;
+      gap: 0.55rem;
+      cursor: pointer;
+      transition:
+        box-shadow var(--transition-med),
+        transform var(--transition-med),
+        border-color var(--transition-med),
+        background var(--transition-med);
+      overflow: hidden;
     }
 
-    .project-title {
-      font-size: 0.95rem;
+    .project-card:hover {
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.8);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 60%),
+        rgba(15, 23, 42, 0.98);
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .project-name {
+      font-size: 0.98rem;
       font-weight: 600;
     }
 
     .project-badge {
       font-size: 0.7rem;
-      padding: 0.16rem 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: rgba(30, 64, 175, 0.9);
-      color: #e0f2fe;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: #bbf7d0;
+      white-space: nowrap;
     }
 
     .project-meta {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 0.25rem;
     }
 
-    .project-link {
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.74rem;
+    }
+
+    .project-tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+    }
+
+    .project-summary {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-extra {
+      margin-top: 0.35rem;
+      display: none;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-card.is-open .project-extra {
+      display: block;
+    }
+
+    .project-actions {
+      margin-top: 0.65rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .chip {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      margin-top: 0.35rem;
-      font-size: 0.8rem;
-      color: #e0f2fe;
-      opacity: 0.85;
-    }
-
-    .project-link span.icon-arrow {
-      font-size: 0.95rem;
-    }
-
-    /* INTERESTS */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 1.1rem;
-    }
-
-    .interest-list {
-      font-size: 0.9rem;
+      gap: 0.25rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text-muted);
-      margin: 0.2rem 0 0;
-      padding-left: 1.1rem;
+      cursor: pointer;
+      transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
     }
 
-    /* CONTACT */
+    .chip:hover {
+      border-color: var(--accent);
+      color: #e5e7eb;
+      transform: translateY(-1px);
+    }
+
+    .chip-primary {
+      border-color: rgba(56, 189, 248, 0.65);
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+    }
+
+    /* Skills */
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 1.3rem;
+    }
+
+    .skill-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .skill-pill {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      color: var(--text-muted);
+    }
+
+    /* Contact */
+
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 1rem;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
     .contact-cta {
-      font-size: 0.95rem;
-      color: var(--text-muted);
+      line-height: 1.8;
     }
 
     .contact-pill-row {
+      margin-top: 0.9rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 0.9rem;
+      gap: 0.5rem;
     }
 
     .contact-pill {
-      padding: 0.42rem 0.9rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.98);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
     }
 
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-      padding: 1.5rem 1.25rem 2rem;
-      font-size: 0.8rem;
+    .contact-pill:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      color: #e5e7eb;
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
       color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(30, 41, 59, 0.9);
       text-align: center;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    /* ====== SCROLL FADE-IN ====== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition:
+        opacity 0.45s ease-out,
+        transform 0.45s ease-out;
+    }
 
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ====== RESPONSIVE ====== */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+      }
+      .hero {
+        padding-top: 1.8rem;
+      }
       .hero-right {
         order: -1;
       }
-
-      .list-grid,
-      .project-list,
-      .two-col,
-      .contact-grid {
+      .hero-card {
+        max-width: 100%;
+      }
+      .about-layout,
+      .skills-layout,
+      .contact-grid,
+      .timeline-item {
         grid-template-columns: minmax(0, 1fr);
       }
-
-      .section-body {
-        padding: 1.2rem 1rem;
+      .project-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
     @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-      }
-
-      .hero {
-        padding-top: 1.5rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .container {
+      .nav-inner {
         padding-inline: 1rem;
       }
-          
-/* Horizontal Slider */
-.slider-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.slider-container::-webkit-scrollbar {
-  display: none;
-}
-
-.slider {
-  display: flex;
-  gap: 1.2rem;
-  padding-bottom: 0.4rem;
-}
-
-.slider-item {
-  min-width: 300px;
-  flex: 0 0 auto;
-}
-
-.view-btn {
-  margin-top: 0.7rem;
-  background: rgba(56,189,248,0.15);
-  border-color: rgba(56,189,248,0.3);
-  font-size: 0.78rem;
-  transition: 0.2s;
-}
-
-.view-btn:hover {
-  background: rgba(56,189,248,0.3);
-  transform: translateY(-2px);
-}
-
-    /* ✨ Interactive Hover Effects — Paste here */
-
-    .contact-pill,
-    .btn,
-    .tag,
-    .chip,
-    .pill {
-      transition: all 0.2s ease;
+      .shell {
+        padding-inline: 1rem;
+      }
+      nav ul {
+        gap: 0.9rem;
+        font-size: 0.78rem;
+      }
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .section-body {
+        padding: 1.1rem 1rem 1.1rem;
+      }
     }
-
-    .contact-pill:hover,
-    .btn:hover,
-    .tag:hover,
-    .chip:hover,
-    .pill:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35);
-      border-color: rgba(56, 189, 248, 0.4);
-    }
-
-    .item-card,
-    .project-list .item-card,
-    .section-body {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .item-card:hover,
-    .project-list .item-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.18);
-      border-color: rgba(56, 189, 248, 0.35);
-    }
-
-    .nav-links a {
-      transition: all 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(56, 189, 248, 0.15);
-      color: #e0f2fe;
-      transform: translateY(-2px);
-    }
-
   </style>
 </head>
+
 <body>
+<header>
+  <div class="nav-inner">
+    <div class="logo">
+      <span>Phuong Tran</span> · BTM / Tech / Policy
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#top" class="nav-link is-active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <div class="page">
-    <header>
-      <nav class="nav">
-        <div class="logo">
-          <span>PT</span> · Portfolio
+<div class="shell">
+  <!-- ====== HERO ====== -->
+  <section id="top" class="hero">
+    <div class="hero-inner reveal">
+      <div class="hero-left">
+        <div class="hero-tagline">
+          <span class="hero-tagline-dot"></span>
+          Honours BCom (BTM) student · Tech, policy & innovation
         </div>
-        <div class="nav-links">
-                    <a href="website-request.html">Build Your Own Website</a>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#cases">Case Comps & Hackathons</a>
-          <a href="#volunteering">Volunteering</a>
-          <a href="#education">Education</a>
-          <a href="#interests">Interests</a>
-          <a href="#contact">Contact</a>
 
+        <h1 class="hero-title">
+          Hi, I’m <span>Phuong Tran.</span>
+        </h1>
 
+        <p class="hero-text">
+          I’m a Business Technology Management student at the Telfer School of Management,
+          exploring the intersection of <strong>emerging technologies, digital policy, and user-centric design</strong>.
+          I love turning complex problems into practical solutions through research, innovation challenges,
+          and case competitions.
+        </p>
+
+        <div class="pill-row">
+          <div class="pill">Business Technology Management</div>
+          <div class="pill pill-alt">Cybersecurity &amp; Digital Policy</div>
+          <div class="pill pill-alt">Case Competitions &amp; Hackathons</div>
+          <div class="pill pill-alt">UX, Data &amp; Storytelling</div>
         </div>
-      </nav>
-    </header>
 
-    <main class="container">
-      <!-- HERO -->
-      <section class="hero" id="top">
-        <div class="hero-left">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Honours BCom (BTM) student · Tech, policy & innovation
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span class="icon">🚀</span>
+            <span>View projects &amp; case comps</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span class="icon">🤝</span>
+            <span>Contact / Connect</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Profile image -->
+        <div class="hero-photo-wrap">
+          <!-- Make sure profile.jpg is in the same folder as this HTML -->
+          <img src="profile.jpg" alt="Portrait of Phuong Tran" class="hero-photo" />
+        </div>
+
+        <!-- At a glance card -->
+        <aside class="hero-card" aria-label="Snapshot of highlights">
+          <div class="hero-card-main">
+            <div>
+              <div class="hero-card-label">At a glance</div>
+              <div class="hero-card-pill">
+                <strong>2025</strong>&nbsp;· Student &amp; builder
+              </div>
+            </div>
+            <div class="hero-card-roles">
+              <div><strong>Research Assistant</strong> · Tech governance &amp; AI policy · Telfer</div>
+              <div><strong>Digital Transformation Intern</strong> · GreenVeil Packaging</div>
+              <div><strong>Regional Mentor &amp; Career Coach</strong> · Supporting international &amp; Telfer students</div>
+            </div>
           </div>
-          <h1>Hi, I’m <span>Phuong&nbsp;Tran</span>.</h1>
-          <p class="hero-subtitle">
-            I’m a Business Technology Management student at the Telfer School of Management,
-            exploring the intersection of <strong>emerging technologies, digital policy, and user-centric design</strong>.
-            I love turning complex problems into practical solutions through research, innovation challenges,
-            and case competitions.
+
+          <div class="hero-card-metric-col">
+            <div class="hero-metric-row">
+              <div class="hero-metric-label">Comps</div>
+              <div class="hero-metric-value">10+ hackathons &amp; case comps</div>
+            </div>
+            <div class="hero-metric-row">
+              <div class="hero-metric-label">Top results</div>
+              <div class="hero-metric-value">Multiple wins &amp; podiums</div>
+            </div>
+            <div class="hero-metric-row">
+              <div class="hero-metric-label">Focus</div>
+              <div class="hero-metric-value">Research · Digital policy · UX/data</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section id="about">
+    <div class="section-header">
+      <h2 class="section-title">About</h2>
+      <p class="section-caption">
+        A bit more about my background, how I think about technology, and what I’m currently working on.
+      </p>
+    </div>
+
+    <div class="section-body reveal">
+      <div class="about-layout">
+        <div class="about-text">
+          <p>
+            I’m an Honours Bachelor of Commerce student in <strong>Business Technology Management</strong>
+            (French Immersion) at the University of Ottawa’s Telfer School of Management.
+            I care about how <strong>AI, data, and digital infrastructure</strong> can be used responsibly
+            to improve public-sector systems, sustainability, and everyday user experiences.
           </p>
-          <div class="hero-tags">
-            <div class="pill pill--accent">Business Technology Management</div>
-            <div class="pill">Cybersecurity & Digital Policy</div>
-            <div class="pill">Case Competitions & Hackathons</div>
-            <div class="pill">UX, Data & Storytelling</div>
+          <p>
+            Recently, I’ve been exploring topics like <strong>AI equity, digital governance, and youth homelessness prevention</strong> through
+            research projects, innovation sprints, and hackathons – from building early-warning tools for
+            youth homelessness to designing AR-powered cybersecurity training for hospitals.
+          </p>
+        </div>
+
+        <div class="about-list">
+          <div class="about-item">
+            <div class="about-item-title">Education</div>
+            <p>
+              Honours BCom (Business Technology Management, French Immersion),
+              Telfer School of Management – University of Ottawa.
+            </p>
           </div>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              View projects & case comps
+          <div class="about-item">
+            <div class="about-item-title">Focus Areas</div>
+            <p>
+              AI &amp; digital policy, cybersecurity, UX &amp; data storytelling, sustainability,
+              and public-sector innovation.
+            </p>
+          </div>
+          <div class="about-item">
+            <div class="about-item-title">Languages</div>
+            <p>English · French (immersion) · Vietnamese · Japanese (JLPT-track).</p>
+          </div>
+          <div class="about-item">
+            <div class="about-item-title">What I enjoy</div>
+            <p>
+              Competitive problem-solving, visual storytelling, learning new tools,
+              and supporting other students through coaching &amp; mentorship.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EXPERIENCE ====== -->
+  <section id="experience">
+    <div class="section-header">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-caption">
+        Roles and initiatives where I’ve applied business technology, data, and design to real problems.
+      </p>
+    </div>
+
+    <div class="section-body reveal">
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Research Assistant – AI, Policy &amp; Equity</div>
+            <div class="timeline-org">Telfer School of Management · University of Ottawa</div>
+            <div class="timeline-meta">2024–2025 · Ottawa / Remote</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">AI &amp; labour markets</span>
+              <span class="timeline-tag">Equity &amp; public policy</span>
+              <span class="timeline-tag">Data storytelling</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Co-developed a visual report on <strong>AI and the future of work in Canada</strong>, combining exposure indices, labour-market projections, and equity lenses for public-sector decision-makers.</li>
+              <li>Designed infographics and briefs that translate complex quantitative analysis into accessible narratives for non-technical audiences.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Digital Transformation Intern</div>
+            <div class="timeline-org">GreenVeil Packaging</div>
+            <div class="timeline-meta">2024 · Remote</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Sustainability</span>
+              <span class="timeline-tag">Digital marketing</span>
+              <span class="timeline-tag">Process design</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Supported digital workflows and storytelling for a sustainable packaging startup, including product positioning and content for antimicrobial &amp; eco-friendly lines.</li>
+              <li>Created visual assets and documents that help non-technical partners understand the impact of the technology.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Student Leader · Mentor &amp; Career Coach</div>
+            <div class="timeline-org">Telfer School of Management &amp; University of Ottawa</div>
+            <div class="timeline-meta">Ongoing</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Career coaching</span>
+              <span class="timeline-tag">Peer mentorship</span>
+              <span class="timeline-tag">Work-integrated learning</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Guided international and first-year students through co-op, case competitions, and academic planning.</li>
+              <li>Shared resources, templates, and “behind the scenes” to make opportunities more accessible to others.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+  <section id="projects">
+    <div class="section-header">
+      <h2 class="section-title">Projects &amp; Case Competitions</h2>
+      <p class="section-caption">
+        A selection of hackathons, innovation sprints, and case competitions – with links to PDFs, Devpost pages, and interactive posters.
+      </p>
+    </div>
+
+    <div class="section-body reveal">
+      <div class="project-grid">
+
+        <!-- Youth Homelessness Early Warning & Shelter Diversion -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">Early Warning Screening &amp; Support Pathway (EWSS)</h3>
+            <span class="project-badge">Winner</span>
+          </div>
+          <div class="project-meta">
+            Innovation Sprint – Youth Homelessness (3-day systems-thinking challenge · 160+ students)
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Youth homelessness prevention</span>
+            <span class="project-tag">Early intervention &amp; shelter diversion</span>
+            <span class="project-tag">Systems thinking</span>
+          </div>
+          <p class="project-summary">
+            Designed a pathway for early screening, school-based supports, and shelter diversion to prevent youth homelessness,
+            aligning with evidence on early intervention, risk factors, and protective systems.
+          </p>
+          <div class="project-extra">
+            <p>
+              I led the <strong>visual design and interactive poster</strong>, synthesizing research on systems thinking, risk factors,
+              and prevention levers into an accessible, clickable journey for educators and service providers.
+            </p>
+          </div>
+          <div class="project-actions">
+            <!-- Replace href with your actual Devpost URL if you prefer -->
+            <a class="chip chip-primary" href="https://devpost.com/software/early-warning-screening-support-ewss-pathway" target="_blank" rel="noopener">
+              🔗 View Devpost
             </a>
-            <a href="#contact" class="btn btn-ghost">
-              Contact / Connect
+            <a class="chip" href="https://phuong24-tran.github.io/homelessness-sprint-interactive-poster/" target="_blank" rel="noopener">
+              🧩 Interactive poster
+            </a>
+            <!-- Optional: link PDFs if you export them -->
+            <!-- <a class="chip" href="EWSS_Poster.pdf" target="_blank">📄 View PDF poster</a> -->
+          </div>
+        </article>
+
+        <!-- uOttaHack – AI Emergency Rescuer -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">AI Emergency Rescuer</h3>
+            <span class="project-badge">Hackathon</span>
+          </div>
+          <div class="project-meta">
+            uOttaHack · AI assistant for multilingual emergency support (voice, images, and text)
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">AI safety</span>
+            <span class="project-tag">Multimodal</span>
+            <span class="project-tag">Crisis response</span>
+          </div>
+          <p class="project-summary">
+            Built an AI responder that supports emergencies through text, calls, and image inputs in multiple languages, aiming
+            to make help more accessible in high-stress, time-sensitive situations.
+          </p>
+          <div class="project-extra">
+            <p>
+              I contributed to <strong>interaction design and prompt flows</strong>, ensuring the system can triage inputs quickly and
+              safely route users toward appropriate instructions or escalation paths.
+            </p>
+          </div>
+          <div class="project-actions">
+            <!-- Plug your Devpost link here if you have one -->
+            <!-- <a class="chip chip-primary" href="UOttaHack_Devpost_URL" target="_blank">🔗 Devpost</a> -->
+            <!-- <a class="chip" href="AI_Emergency_Rescuer_Poster.pdf" target="_blank">📄 View PDF</a> -->
+          </div>
+        </article>
+
+        <!-- BMTechLytics – AI & Future of Work equity poster -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">Illuminating Canada’s AI Opportunity Gap</h3>
+            <span class="project-badge">Equity · Phase 1</span>
+          </div>
+          <div class="project-meta">
+            BMTechLytics – TECHNATION AI Equity Data Challenge
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">AI &amp; labour markets</span>
+            <span class="project-tag">Equity &amp; demographics</span>
+            <span class="project-tag">Visual analytics</span>
+          </div>
+          <p class="project-summary">
+            Analyzed AI exposure, complementarity, and skill demand across Canadian regions and sectors, layering gender and
+            racial equity lenses to highlight who benefits and who may be left behind in the future of work.
+          </p>
+          <div class="project-extra">
+            <p>
+              I led the <strong>poster design and narrative</strong>, combining StatCan indices, COPS projections, and skills data into
+              a single visual story for policymakers and public-sector leaders.
+            </p>
+          </div>
+          <div class="project-actions">
+            <!-- Update to match the filename you host -->
+            <a class="chip chip-primary" href="BMTechlytics_Phase1.pdf" target="_blank">
+              📄 View poster (PDF)
+            </a>
+          </div>
+        </article>
+
+        <!-- Healthcare Cybersecurity Strategy -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">Healthcare Cybersecurity Strategy</h3>
+            <span class="project-badge">Hackathon</span>
+          </div>
+          <div class="project-meta">
+            “Cybercare Defender” – AR-enhanced training &amp; credit-score model for hospitals
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Cybersecurity</span>
+            <span class="project-tag">AR &amp; simulation</span>
+            <span class="project-tag">Healthcare</span>
+          </div>
+          <p class="project-summary">
+            Designed an AR-driven training system where staff experience phishing and security scenarios in context, with a
+            gamified cybersecurity credit score that surfaces vulnerabilities and cultural gaps.
+          </p>
+          <div class="project-extra">
+            <p>
+              I worked on <strong>system framing, impact visuals, and risk communication</strong>, connecting human-factor issues
+              (like phishing susceptibility and downtime) with practical AR workflows for teams.
+            </p>
+          </div>
+          <div class="project-actions">
+            <a class="chip chip-primary" href="Healthcare_Cybersecurity_Strategy.pdf" target="_blank">
+              📄 View strategy poster (PDF)
+            </a>
+          </div>
+        </article>
+
+        <!-- AIDEX – HealthSync (PSPC / healthcare case) -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">AIDEX – HealthSync</h3>
+            <span class="project-badge">Case Comp</span>
+          </div>
+          <div class="project-meta">
+            National healthcare case – FHIR-compliant, AI-enabled patient record platform
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Digital health</span>
+            <span class="project-tag">FHIR &amp; interoperability</span>
+            <span class="project-tag">Product &amp; architecture</span>
+          </div>
+          <p class="project-summary">
+            Proposed a unified patient-record system that connects clinics, hospitals, wearables, and AI tools – enabling secure
+            record sharing, anomaly detection, and prescription workflows across Canada.
+          </p>
+          <div class="project-extra">
+            <p>
+              Contributed to <strong>journey mapping, feature design, and tech stack framing</strong>, with emphasis on privacy,
+              PIPEDA compliance, and practical pathways for government adoption.
+            </p>
+          </div>
+          <div class="project-actions">
+            <a class="chip chip-primary" href="AidEx_HealthSync.pdf" target="_blank">
+              📄 View case poster (PDF)
+            </a>
+          </div>
+        </article>
+
+        <!-- L’Oréal Brandstorm -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">L’Oréal Brandstorm</h3>
+          </div>
+          <div class="project-meta">
+            Innovation challenge – beauty, sustainability &amp; customer experience
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Brand strategy</span>
+            <span class="project-tag">Customer journey</span>
+            <span class="project-tag">Sustainability</span>
+          </div>
+          <p class="project-summary">
+            Worked on a concept that blends digital experiences with sustainability-focused product storytelling for Gen Z
+            consumers.
+          </p>
+          <div class="project-extra">
+            <p>
+              Focused on <strong>user journey mapping and pitch visuals</strong>, ensuring the narrative is both aspirational and
+              grounded in feasible activation steps.
+            </p>
+          </div>
+          <div class="project-actions">
+            <!-- Example placeholder if you export a deck -->
+            <!-- <a class="chip chip-primary" href="Loreal_Brandstorm_Deck.pdf" target="_blank">📄 View deck (PDF)</a> -->
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS ====== -->
+  <section id="skills">
+    <div class="section-header">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-caption">
+        A snapshot of tools and strengths I lean on most in projects, research, and competitions.
+      </p>
+    </div>
+
+    <div class="section-body reveal">
+      <div class="skills-layout">
+        <div>
+          <div class="skill-group-title">Tech, data &amp; tools</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Excel &amp; advanced formulas</span>
+            <span class="skill-pill">Python (pandas, notebooks)</span>
+            <span class="skill-pill">SQL basics</span>
+            <span class="skill-pill">Power BI / data viz</span>
+            <span class="skill-pill">Figma &amp; UX flows</span>
+            <span class="skill-pill">Canva &amp; visual storytelling</span>
+            <span class="skill-pill">Kepler.gl / maps</span>
+          </div>
+
+          <div class="skill-group-title" style="margin-top: 1.1rem;">Methods &amp; approaches</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Systems thinking</span>
+            <span class="skill-pill">User-centric design</span>
+            <span class="skill-pill">Desk research &amp; synthesis</span>
+            <span class="skill-pill">Policy &amp; regulation scanning</span>
+            <span class="skill-pill">Storyboarding &amp; pitching</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Soft skills &amp; leadership</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">Public speaking &amp; presenting</span>
+            <span class="skill-pill">Team facilitation</span>
+            <span class="skill-pill">Peer coaching &amp; mentoring</span>
+            <span class="skill-pill">Cross-cultural collaboration</span>
+            <span class="skill-pill">Time-boxed problem solving</span>
+          </div>
+          <div class="skill-group-title" style="margin-top: 1.1rem;">Domains I care about</div>
+          <div class="skill-pill-row">
+            <span class="skill-pill">AI &amp; the future of work</span>
+            <span class="skill-pill">Youth homelessness prevention</span>
+            <span class="skill-pill">Healthcare &amp; public systems</span>
+            <span class="skill-pill">Sustainability &amp; circularity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact">
+    <div class="section-header">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-caption">
+        Whether it’s a case competition, internship, or collaboration idea – I’d love to hear from you.
+      </p>
+    </div>
+
+    <div class="section-body reveal">
+      <div class="contact-grid">
+        <div>
+          <p class="contact-cta">
+            I’m always open to opportunities related to
+            <strong>business technology, cybersecurity, digital policy, product / innovation, and student support</strong>.
+            If you’d like to collaborate, chat about a competition, or discuss an opportunity, feel free to reach out.
+          </p>
+          <div class="contact-pill-row">
+            <a href="mailto:phtranworkmail@gmail.com" class="contact-pill" target="_blank">
+              📧 <span>Email me</span>
+            </a>
+            <button type="button" class="contact-pill" id="copy-email-btn">
+              📋 <span id="copy-email-label">Copy email</span>
+            </button>
+            <!-- Add your LinkedIn / GitHub URLs here -->
+            <a href="https://www.linkedin.com" class="contact-pill" target="_blank" rel="noopener">
+              💼 <span>LinkedIn</span>
             </a>
           </div>
         </div>
-        <div class="hero-right">
-          <aside class="hero-card" aria-label="Snapshot of highlights">
-            <div class="hero-card-header">
-              <div class="hero-card-title">At a glance</div>
-              <div class="hero-card-badge">2025 · Student & Builder</div>
-            </div>
-            <div class="stats">
-              <div class="stat">
-                <div class="stat-label">Competitions</div>
-                <div class="stat-value">10+<br /></div>
-              </div>
-              <div class="stat">
-                <div class="stat-label">Top 3 / Wins</div>
-                <div class="stat-value">Multiple</div>
-              </div>
-              <div class="stat">
-                <div class="stat-label">Experience</div>
-                <div class="stat-value">Research · Digital</div>
-              </div>
-            </div>
-            <div class="timeline-mini">
-              <div class="timeline-mini-item">
-                <div class="timeline-mini-title">Research Assistant</div>
-                <div class="timeline-mini-meta">Tech governance & AI policy · Telfer</div>
-              </div>
-              <div class="timeline-mini-item">
-                <div class="timeline-mini-title">Digital Transformation Intern</div>
-                <div class="timeline-mini-meta">GreenVeil Packaging</div>
-              </div>
-              <div class="timeline-mini-item">
-                <div class="timeline-mini-title">Regional Mentor & Career Coach</div>
-                <div class="timeline-mini-meta">Supporting international & Telfer students</div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- ABOUT / SUMMARY -->
-      <section id="about">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="icon"></span> About me
-          </h2>
-        </div>
-        <div class="section-body">
-          <p style="margin-top: 0; font-size: 0.95rem; color: var(--text-muted);">
-            I’m an Honours Bachelor of Commerce student (option in Business Technology Management) at the
-            <strong>Telfer School of Management, University of Ottawa</strong>, graduating in 2028.
-            I’m especially interested in how <strong>AI, cybersecurity, and digital identity</strong> intersect with
-            policy, ethics, and real-world user needs.
-          </p>
-          <p style="font-size: 0.95rem; color: var(--text-muted);">
-            Outside the classroom, I actively participate in
-            <strong>case competitions, hackathons, and innovation challenges</strong> that push me to build
-            solutions for sectors like healthcare, tourism, and cybersecurity. I enjoy synthesizing research,
-            structuring messy information, and telling clear stories through data, design, and presentations.
-          </p>
-          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
-            I’m also deeply involved in <strong>student support and mentorship</strong>:
-            helping international and business students navigate academics, careers, and life in Canada through
-            coaching, peer support, and community-building.
+        <div>
+          <p class="contact-note">
+            This page is fully static – just HTML, CSS, and a tiny bit of JavaScript for interactions.
+            You can host it on GitHub Pages, Netlify, or any basic web host. To update projects,
+            simply edit the cards above or link new PDFs and posters.
           </p>
         </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section id="experience">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="icon"></span> Experience
-          </h2>
-          <div class="section-subtitle">
-            Research, digital transformation & student leadership roles.
-          </div>
-        </div>
-        <div class="section-body">
-          <div class="list-grid">
-            <!-- Research Assistant -->
-            <article class="item-card">
-              <div class="item-header">
-                <div class="item-title">Research Assistant</div>
-                <div class="item-meta">Oct. 2025 — Present · Ottawa, ON</div>
-              </div>
-              <div class="item-org">
-                Telfer School of Management, University of Ottawa
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Tech Governance</span>
-                <span class="tag">AI & Facial Recognition</span>
-                <span class="tag">Cybersecurity & Privacy</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Conduct policy analysis on the ethical and legal implications of emerging technologies
-                  (e.g., AI, facial recognition), contributing to research on regulatory responses such as the EU’s
-                  Clearview AI ban.
-                </li>
-                <li>
-                  Assess cybersecurity and data privacy risks by examining international data transfer frameworks
-                  (e.g., Data Bridge) for GDPR compliance, identifying vulnerabilities and governance gaps.
-                </li>
-                <li>
-                  Synthesize complex qualitative and quantitative research into actionable insights that inform
-                  academic papers and reports on technology governance and digital policy.
-                </li>
-                <li>
-                  Design visualizations and infographics to translate dense findings into clear, accessible graphics
-                  for stakeholders, presentations and publications.
-                </li>
-              </ul>
-            </article>
-
-            <!-- Digital Transformation Intern -->
-            <article class="item-card">
-              <div class="item-header">
-                <div class="item-title">Digital Transformation Intern</div>
-                <div class="item-meta">Oct. 2025 — Present · Ottawa, ON</div>
-              </div>
-              <div class="item-org">
-                GreenVeil Packaging, Advanced Research Complex
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Digital Content</span>
-                <span class="tag">Sustainability</span>
-                <span class="tag">Stakeholder Communication</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Transform raw technical and sustainability data into clear, audience-specific content for digital
-                  and print marketing materials (brochures, flyers, one-pagers).
-                </li>
-                <li>
-                  Streamline the content creation process by structuring disparate data sources, improving
-                  efficiency and consistency in how GreenVeil communicates its initiatives.
-                </li>
-                <li>
-                  Apply a user-centric lens to messaging and design, tailoring materials to target demographics
-                  to maximize clarity, engagement and impact.
-                </li>
-              </ul>
-            </article>
-
-            <!-- Regional Mentor -->
-            <article class="item-card">
-              <div class="item-header">
-                <div class="item-title">Regional Mentor (Asia)</div>
-                <div class="item-meta">May 2025 — Present · Ottawa, ON</div>
-              </div>
-              <div class="item-org">
-                Student Affairs, University of Ottawa
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Student Support</span>
-                <span class="tag">International Students</span>
-                <span class="tag">Community Building</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Support students from Asia in navigating the Canadian academic system, including course
-                  enrollment strategies, study resources, and grading expectations.
-                </li>
-                <li>
-                  Provide empathetic peer support to students facing culture shock, homesickness, or stress,
-                  sharing strategies to balance academic and personal well-being.
-                </li>
-                <li>
-                  Connect students with key campus services (academic advising, mental health, learning support)
-                  and help coordinate workshops on time management and cross-cultural communication.
-                </li>
-                <li>
-                  Contribute to community-building by planning social activities and events that help students
-                  feel at home in Ottawa.
-                </li>
-              </ul>
-            </article>
-
-            <!-- Board Member -->
-            <article class="item-card">
-              <div class="item-header">
-                <div class="item-title">Board Member</div>
-                <div class="item-meta">Feb. 2024 — Jul. 2024 · Ottawa, ON</div>
-              </div>
-              <div class="item-org">
-                Student Association, Algonquin College
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Governance</span>
-                <span class="tag">Student Advocacy</span>
-                <span class="tag">International Students</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Represented the interests of 20,000+ full-time students in discussions with college administration,
-                  ensuring student perspectives informed key decisions.
-                </li>
-                <li>
-                  Collaborated with a team of eight board members, dedicating 150+ hours each term to gathering
-                  feedback and defining student priorities.
-                </li>
-                <li>
-                  Co-chaired the International Student Advisory Committee, facilitating transparent dialogue on
-                  challenges faced by international students and proposing solutions.
-                </li>
-                <li>
-                  Helped students navigate course enrollment, academic resources, and campus services to support
-                  their success.
-                </li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS (product / innovation) -->
-     <!-- SELECTED PROJECTS -->
-<section id="projects">
-  <div class="section-header">
-    <h2 class="section-title">
-      <span class="icon"></span> Selected Projects
-    </h2>
-    <div class="section-subtitle">
-      A curated selection of my top project and innovation work.
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="section-body">
-    <div class="project-list">
+  <footer>
+    © <span id="year"></span> Phuong Tran · Built with care &amp; updated over time.
+  </footer>
+</div>
 
-      <!-- AI Equity Challenge -->
-      <article class="item-card">
-        <div class="project-title-line">
-          <div class="project-title">AI Equity Challenge – Phase 1</div>
-          <div class="project-badge">2025</div>
-        </div>
-        <div class="project-meta">
-          TECHNATION Canada · Sept 2 – Oct 5, 2025
-        </div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Data Analysis</span>
-          <span class="tag">AI & Society</span>
-          <span class="tag">Equity Research</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Analyzed Labour Market Information (LMI) datasets to assess how AI reshapes job markets across industries and regions in Canada.</li>
-          <li>Identified demographic impacts including race, gender, income, and geography in relation to AI-driven economic opportunities.</li>
-          <li>Explored wage equity, skill gaps, and diversity trends to highlight which groups benefit most — and which face barriers.</li>
-          <li>Created a 5-page data-driven visual report communicating disparities, projections, and policy-relevant insights.</li>
-        </ul>
-      </article>
+<!-- ====== INTERACTION SCRIPTS ====== -->
+<script>
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-      <!-- CyberCare Defender -->
-      <article class="item-card">
-        <div class="project-title-line">
-          <div class="project-title">The CyberCare Defender – AR Cybersecurity Training</div>
-          <div class="project-badge">Top 3 Nationwide</div>
-        </div>
-        <div class="project-meta">
-          Technation Cybersecurity Hackathon · Dec 2024
-        </div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Cybersecurity</span>
-          <span class="tag">AR / HoloLens</span>
-          <span class="tag">Healthcare</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Developed an AR-assisted cybersecurity training tool for healthcare workers using Microsoft HoloLens 2.</li>
-          <li>Simulated realistic phishing, ransomware, and insider threat scenarios using real case studies.</li>
-          <li>Integrated HIPAA-aligned privacy and compliance considerations into solution design.</li>
-        </ul>
-      </article>
+  // Smooth scroll active nav highlight
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = [...document.querySelectorAll("section")];
 
-      <!-- Planit -->
-      <article class="item-card">
-        <div class="project-title-line">
-          <div class="project-title">Planit – Smart Tourism Platform</div>
-          <div class="project-badge">Winner</div>
-        </div>
-        <div class="project-meta">
-          Solutions Lab: Tourism · Oct 2024 · uOttawa
-        </div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Entrepreneurship</span>
-          <span class="tag">UX & Product</span>
-          <span class="tag">Tourism</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Built a tourism platform enabling itinerary planning, ticketing, and local recommendations.</li>
-          <li>Iterated design with mentors and validated user pain points in Ottawa’s tourism ecosystem.</li>
-        </ul>
-      </article>
+  function onScroll() {
+    const scrollPos = window.scrollY + 90;
+    let currentId = "top";
+    for (const section of sections) {
+      if (scrollPos >= section.offsetTop) {
+        currentId = section.id || "top";
+      }
+    }
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href").replace("#", "");
+      link.classList.toggle("is-active", href === currentId);
+    });
+  }
 
-      <!-- uOttaHack 7 -->
-      <article class="item-card">
-        <div class="project-title-line">
-          <div class="project-title">AI Urgency Detection for 911 Calls</div>
-          <div class="project-badge">Best Collaboration</div>
-        </div>
-        <div class="project-meta">
-          uOttaHack 7 · Jan 2024
-        </div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Hackathon</span>
-          <span class="tag">LLaMA & Whisper</span>
-          <span class="tag">Public Safety</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Engineered an urgency-detection tool using Whisper voice recognition and LLaMA classification.</li>
-          <li>Designed privacy-respecting consent tiers for safer citizen–government data interactions.</li>
-        </ul>
-      </article>
+  window.addEventListener("scroll", onScroll);
+  onScroll();
 
-    </div>
-  </div>
-</section>
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  revealEls.forEach((el) => observer.observe(el));
 
+  // Expand project cards on click (but keep links clickable)
+  document.querySelectorAll("[data-expand-on-click]").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target.closest("a") || target.closest("button")) return;
+      card.classList.toggle("is-open");
+    });
+  });
 
-<!-- MORE PROJECTS -->
-<!-- MORE PROJECTS (Horizontal Scroll Slider) -->
-<section id="more-projects">
-  <div class="section-header">
-    <h2 class="section-title">
-      <span class="icon"></span> More Projects
-    </h2>
-    <div class="section-subtitle">
-      Additional hackathons, case competitions, and innovation work.
-    </div>
-  </div>
+  // Copy email to clipboard
+  const copyBtn = document.getElementById("copy-email-btn");
+  const copyLabel = document.getElementById("copy-email-label");
+  const email = "phtranworkmail@gmail.com";
 
-  <div class="section-body slider-container">
-    <div class="slider">
-      
-      <!-- CFA Challenge -->
-      <article class="item-card slider-item">
-        <div class="project-title-line">
-          <div class="project-title">CFA Research Challenge 2024</div>
-          <div class="project-badge">📘 Representing uOttawa</div>
-        </div>
-        <div class="project-meta">CFA Institute · Equity Research</div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Finance</span>
-          <span class="tag">Valuation</span>
-          <span class="tag">Equity Research</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Represented the University of Ottawa in a global-standard equity research competition.</li>
-          <li>Performed valuation modelling, industry research, and risk assessment.</li>
-          <li>Co-authored a research report aligned with CFA Institute standards.</li>
-        </ul>
-        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
-      </article>
-
-      <!-- HealthSync Finalist -->
-      <article class="item-card slider-item">
-        <div class="project-title-line">
-          <div class="project-title">AI Patient Record System</div>
-          <div class="project-badge">🏅 Finalist</div>
-        </div>
-        <div class="project-meta">Canadian HealthSync Innovation Challenge</div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Healthcare</span>
-          <span class="tag">Automation</span>
-          <span class="tag">FHIR</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Designed a patient record system using FHIR + PIPEDA compliance.</li>
-          <li>Encrypted data flows + OAuth 2.0 access control system.</li>
-          <li>Proposed chatbot-assisted intake and prescription flows.</li>
-        </ul>
-        <a class="btn view-btn">📄 View PDF (Coming Soon)</a>
-      </article>
-
-      <!-- L'Oréal Brandstorm -->
-      <article class="item-card slider-item">
-        <div class="project-title-line">
-          <div class="project-title">ScalpSavvy – AI Scalp Health Platform</div>
-          <div class="project-badge">🧪 Innovation Case</div>
-        </div>
-        <div class="project-meta">L’Oréal Brandstorm 2025</div>
-        <div class="item-tags">
-          <span class="tag tag--accent">AI</span>
-          <span class="tag">Computer Vision</span>
-          <span class="tag">UI/UX</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Created a Figma UI for an AI-powered scalp analysis tool.</li>
-          <li>Designed male-targeted UI + brand experience.</li>
-          <li>Integrated Python/TensorFlow CV concept + FastAPI backend model.</li>
-        </ul>
-        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
-      </article>
-
-      <!-- Tap to Connect -->
-      <article class="item-card slider-item">
-        <div class="project-title-line">
-          <div class="project-title">Tap-to-Connect NFC</div>
-          <div class="project-badge">🥇 Highest Votes</div>
-        </div>
-        <div class="project-meta">The Crunch – uOttawa, Carleton, Algonquin, La Cité</div>
-        <div class="item-tags">
-          <span class="tag tag--accent">NFC</span>
-          <span class="tag">Entrepreneurship</span>
-          <span class="tag">Pitching</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Earned top public vote among 14+ teams.</li>
-          <li>Built NFC-based instant profile sharing tool.</li>
-          <li>Delivered top-ranked 30-second pitch.</li>
-        </ul>
-        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
-      </article>
-
-      <!-- Sustainability -->
-      <article class="item-card slider-item">
-        <div class="project-title-line">
-          <div class="project-title">Leaf-Based Biodegradable Utensils</div>
-          <div class="project-badge">🌿 Concept Development</div>
-        </div>
-        <div class="project-meta">Ideas Lab: Sustainability</div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Eco Design</span>
-          <span class="tag">Sustainability</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Proposed leaf-based utensils replacing single-use plastics.</li>
-          <li>Research on rapid decomposition + eco-friendly sourcing.</li>
-          <li>Explored pricing + supply chain feasibility.</li>
-        </ul>
-        <a class="btn view-btn">📄 View PDF (Coming Soon)</a>
-      </article>
-
-      <!-- PSPC -->
-      <article class="item-card slider-item">
-        <div class="project-title-line">
-          <div class="project-title">PSPC Supply Chain Strategy</div>
-          <div class="project-badge">🥉 3rd Place</div>
-        </div>
-        <div class="project-meta">uOCA Case Competition · PSPC</div>
-        <div class="item-tags">
-          <span class="tag tag--accent">Supply Chain</span>
-          <span class="tag">Federal Policy</span>
-        </div>
-        <ul class="item-bullets">
-          <li>Developed federal supply-chain resiliency recommendations.</li>
-          <li>Analyzed risks + vendor diversification during geopolitical tension.</li>
-          <li>Presented structured recommendations under time pressure.</li>
-        </ul>
-        <a class="btn view-btn">📄 View Deck (Coming Soon)</a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-
-      <!-- VOLUNTEERING -->
-      <section id="volunteering">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="icon"></span> Volunteering & mentorship
-          </h2>
-          <div class="section-subtitle">
-            Giving back through coaching, cybersecurity mentoring, and peer support.
-          </div>
-        </div>
-        <div class="section-body">
-          <div class="list-grid">
-            <!-- Career Development Ambassador -->
-            <article class="item-card">
-              <div class="item-header">
-                <div class="item-title">
-                  Career Development Ambassador & Coach
-                </div>
-                <div class="item-meta">Sept. 2025 — Present · Ottawa, ON</div>
-              </div>
-              <div class="item-org">
-                Career Centre, Telfer School of Management
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Career Coaching</span>
-                <span class="tag">Resume Support</span>
-                <span class="tag">Bilingual (EN/FR)</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Delivered bilingual, personalized résumé critiques to nearly 30 students in a single two-hour block,
-                  improving job-search readiness and application quality.
-                </li>
-                <li>
-                  Supported walk-in sessions serving ~150 students in one month, amplifying the Centre’s visibility and
-                  impact.
-                </li>
-                <li>
-                  Encouraged stronger adoption of the Centre’s centralized career platform through outreach and
-                  coaching.
-                </li>
-                <li>
-                  Received training on coaching ethics, confidentiality, and professionalism to provide responsible peer
-                  support.
-                </li>
-              </ul>
-            </article>
-
-            <!-- Cybersecurity Mentor -->
-            <article class="item-card">
-              <div class="item-header">
-                <div class="item-title">Cybersecurity Mentor</div>
-                <div class="item-meta">Oct. 2024 · Ottawa, ON</div>
-              </div>
-              <div class="item-org">
-                CarletonU Hackathon, Carleton University
-              </div>
-              <div class="item-tags">
-                <span class="tag tag--accent">Cybersecurity</span>
-                <span class="tag">Mentorship</span>
-                <span class="tag">Hackathon</span>
-              </div>
-              <ul class="item-bullets">
-                <li>
-                  Mentored 50+ hackathon participants on building security-focused projects, helping teams identify
-                  and resolve vulnerabilities in real time.
-                </li>
-                <li>
-                  Advised on secure coding practices (e.g., input validation, encryption standards) and data protection
-                  strategies, reducing risks in the majority of projects.
-                </li>
-                <li>
-                  Simplified complex concepts like zero-trust architecture into accessible explanations under a
-                  24-hour competition timeline.
-                </li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section id="education">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="icon"></span> Education
-          </h2>
-        </div>
-        <div class="section-body">
-          <div class="edu-header">
-            <div class="edu-degree">
-              Honours Bachelor of Commerce (Option in Business Technology Management)
-            </div>
-            <div class="edu-meta">
-              Expected 2028 · Telfer School of Management, University of Ottawa (ON)
-            </div>
-          </div>
-          <div class="chip-row">
-            <div class="chip">Business Analytics</div>
-            <div class="chip">Intro to Programming</div>
-            <div class="chip">Data Communication & Networking</div>
-            <div class="chip">Database Design Fundamentals</div>
-            <div class="chip">Management Information Systems</div>
-            <div class="chip">Mathematics for Programming</div>
-          </div>
-          <ul class="compact">
-            <li>
-              Contributed to an innovation research project through a prefigurative workshop with faculty and
-              the Green Academy in a first-year business course.
-            </li>
-            <li>
-              Participated in the Telfer Head Start Program, Excel Challenge and CFA Research Challenge to
-              strengthen financial and analytical skills.
-            </li>
-            <li>
-              Engaged with Telfer Executive Program, Match-up Program and Student Ambassador Program
-              (Career Coach 2025–2026).
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- INTERESTS -->
-      <section id="interests">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="icon"></span> Interests & hobbies
-          </h2>
-          <div class="section-subtitle">
-            What keeps me curious and balanced outside of work and school.
-          </div>
-        </div>
-        <div class="section-body">
-          <div class="two-col">
-            <div>
-              <h3 style="margin: 0 0 0.3rem; font-size: 0.98rem;">Music & performance</h3>
-              <ul class="interest-list">
-                <li>
-                  Grade 8 Piano – Trinity College London, reflecting years of disciplined practice and performance.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 style="margin: 0 0 0.3rem; font-size: 0.98rem;">Sports & swimming</h3>
-              <ul class="interest-list">
-                <li>
-                  Competitive swimmer with 30+ medals, including national-level competitions, building resilience,
-                  focus and mental toughness.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.9rem; margin-bottom: 0;">
-            I’m also passionate about <strong>cybersecurity, digital identity, sustainability, and student mentorship</strong> —
-            themes that often show up in my case competitions, hackathons and side projects.
-          </p>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="icon"></span> Contact & links
-          </h2>
-        </div>
-        <div class="section-body">
-          <div class="contact-grid">
-            <div>
-              <p class="contact-cta">
-                I’m always open to opportunities related to
-                <strong>business technology, cybersecurity, digital policy, product / innovation, and student support</strong>.
-                If you’d like to collaborate, chat about a competition, or discuss an opportunity, feel free to reach out.
-              </p>
-              <div class="contact-pill-row">
-
-  <!-- Email Button -->
-  <a href="mailto:phtranworkmail@gmail.com" class="contact-pill" target="_blank">
-    📧 Email Me
-  </a>
-                 <a href="https://www.linkedin.com/in/phuongtran0204/" class="contact-pill" target="_blank">
-    🔗 LinkedIn Profile
-  </a>
-
-               <a href="#" class="contact-pill">
-    📄 Download Résumé (Coming Soon)
-  </a>
-                <a href="https://calendly.com/phtranworkmail/30min" class="contact-pill" target="_blank">
-    🗓️ Book a Free 15-Minute Consultation
-  </a>
-
-              </div>
-            </div>
-            <div>
-              <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0;">
-                To keep this website up to date, I:
-              </p>
-              <ul class="compact">
-                <li>Add new case competitions and hackathons as cards in the sections above.</li>
-                <li>Upload PDFs (slides, reports, pitch decks) and link them via the “View project” buttons.</li>
-                <li>Update my experiences and education as my journey continues.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © <span id="year"></span> Phuong Tran · Built with HTML & CSS and updated over time.
-    </footer>
-  </div>
-
-  <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        const original = copyLabel.textContent;
+        copyLabel.textContent = "Copied!";
+        setTimeout(() => {
+          copyLabel.textContent = original;
+        }, 1600);
+      } catch (err) {
+        console.error("Copy failed", err);
+      }
+    });
+  }
+</script>
 </body>
 </html>
-
-
