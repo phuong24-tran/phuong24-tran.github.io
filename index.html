@@ -62,8 +62,6 @@
       text-decoration: none;
     }
 
-    /* ====== LAYOUT WRAPPER ====== */
-
     .shell {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -438,8 +436,6 @@
       text-align: right;
     }
 
-    /* ====== SECTIONS ====== */
-
     section {
       margin-top: 2.5rem;
     }
@@ -474,7 +470,6 @@
     }
 
     /* About */
-
     .about-layout {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
@@ -519,8 +514,7 @@
       color: var(--text-muted);
     }
 
-    /* Experience */
-
+    /* Experience + Volunteering shared */
     .timeline {
       display: grid;
       gap: 1rem;
@@ -604,7 +598,6 @@
     }
 
     /* Projects */
-
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -737,8 +730,6 @@
       color: #e5e7eb;
     }
 
-    /* Skills unlocked inside projects */
-
     .project-skills {
       margin-top: 0.5rem;
       font-size: 0.78rem;
@@ -847,8 +838,6 @@
       margin-top: 0.75rem;
     }
 
-    /* Footer */
-
     footer {
       margin-top: 2rem;
       padding-top: 1rem;
@@ -858,7 +847,6 @@
       text-align: center;
     }
 
-    /* ====== SCROLL FADE-IN ====== */
     .reveal {
       opacity: 0;
       transform: translateY(14px);
@@ -871,8 +859,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* ====== RESPONSIVE ====== */
 
     @media (max-width: 900px) {
       .hero-inner {
@@ -930,8 +916,9 @@
         <li><a href="#top" class="nav-link is-active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#volunteering" class="nav-link">Volunteering</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Fun Facts & Contact</a></li>
+        <li><a href="#contact" class="nav-link">Fun Facts &amp; Contact</a></li>
         <li><a href="website-request.html" class="nav-link">Build Your Own Website</a></li>
       </ul>
     </nav>
@@ -945,7 +932,7 @@
       <div class="hero-left">
         <div class="hero-tagline">
           <span class="hero-tagline-dot"></span>
-          Honours BCom (BTM) student · Tech, policy & innovation
+          Honours BCom (BTM) student · Tech, policy &amp; innovation
         </div>
 
         <h1 class="hero-title">
@@ -979,12 +966,10 @@
       </div>
 
       <div class="hero-right">
-        <!-- Profile image -->
         <div class="hero-photo-wrap">
           <img src="profile.jpg" alt="Portrait of Phuong Tran" class="hero-photo" />
         </div>
 
-        <!-- At a glance card -->
         <aside class="hero-card" aria-label="Snapshot of highlights">
           <div class="hero-card-main">
             <div>
@@ -1076,12 +1061,12 @@
     </div>
   </section>
 
-  <!-- ====== EXPERIENCE ====== -->
+  <!-- ====== EXPERIENCE (PAID ROLES) ====== -->
   <section id="experience">
     <div class="section-header">
       <h2 class="section-title">Experience</h2>
       <p class="section-caption">
-        Roles and initiatives where I’ve applied business technology, data, and design to real problems.
+        Paid roles where I’ve applied business technology, data, and design to real problems.
       </p>
     </div>
 
@@ -1127,50 +1112,6 @@
               <li>Transformed raw data into clear, audience-specific marketing content for digital and print materials (e.g., brochures, flyers) to effectively communicate brand value and initiatives.</li>
               <li>Streamlined digital content creation processes by structuring disparate data sources, improving the efficiency and consistency of material production for stakeholder engagement.</li>
               <li>Applied a user-centric approach to design, ensuring all translated data and messaging were tailored to target demographics to maximize impact and clarity.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Career Development Ambassador & Coach -->
-        <article class="timeline-item">
-          <div>
-            <div class="timeline-role">Career Development Ambassador &amp; Coach</div>
-            <div class="timeline-org">Career Centre, Telfer School of Management, University of Ottawa</div>
-            <div class="timeline-meta">Sept. 2025 — Present · Ottawa, Ontario</div>
-            <div class="timeline-tags">
-              <span class="timeline-tag">Career coaching</span>
-              <span class="timeline-tag">Student support</span>
-              <span class="timeline-tag">Bilingual outreach</span>
-            </div>
-          </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Delivered bilingual, personalized résumé critiques to nearly 30 students within two hours, improving résumé quality and job-search readiness.</li>
-              <li>Supported walk-in sessions that attracted approximately 150 students in a single month, significantly expanding the Centre’s reach and visibility.</li>
-              <li>Encouraged dozens of students to adopt the Centre’s centralized career platform, driving stronger engagement in professional development.</li>
-              <li>Promoted Career Centre initiatives through targeted social-media campaigns and in-person outreach in both English and French.</li>
-              <li>Received specialized training on the ethics of coaching, confidentiality, and professionalism to ensure responsible peer support and student guidance.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Cybersecurity Mentor -->
-        <article class="timeline-item">
-          <div>
-            <div class="timeline-role">Cybersecurity Mentor</div>
-            <div class="timeline-org">CarletonU Hackathon · Carleton University</div>
-            <div class="timeline-meta">Oct. 2024 · Ottawa, Ontario</div>
-            <div class="timeline-tags">
-              <span class="timeline-tag">Cybersecurity</span>
-              <span class="timeline-tag">Mentorship</span>
-              <span class="timeline-tag">Hackathon</span>
-            </div>
-          </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Mentored 50+ hackathon participants in developing security-focused projects, guiding teams to identify and resolve vulnerabilities in real time.</li>
-              <li>Advised secure coding practices (e.g., input validation, encryption standards) and data protection strategies, reducing risks in 85% of projects.</li>
-              <li>Simplified complex concepts (e.g., zero-trust architecture) through workshops, fostering rapid skill development under 24-hour deadlines.</li>
             </ul>
           </div>
         </article>
@@ -1241,6 +1182,66 @@
     </div>
   </section>
 
+  <!-- ====== LEADERSHIP & VOLUNTEERING ====== -->
+  <section id="volunteering">
+    <div class="section-header">
+      <h2 class="section-title">Leadership &amp; Volunteering</h2>
+      <p class="section-caption">
+        Unpaid roles where I support other students and contribute to my community.
+      </p>
+    </div>
+
+    <div class="section-body reveal">
+      <div class="timeline">
+
+        <!-- Career Development Ambassador & Coach -->
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Career Development Ambassador &amp; Coach</div>
+            <div class="timeline-org">Career Centre, Telfer School of Management, University of Ottawa</div>
+            <div class="timeline-meta">Sept. 2025 — Present · Ottawa, Ontario</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Career coaching</span>
+              <span class="timeline-tag">Student support</span>
+              <span class="timeline-tag">Bilingual outreach</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Delivered bilingual, personalized résumé critiques to nearly 30 students within two hours, improving résumé quality and job-search readiness.</li>
+              <li>Supported walk-in sessions that attracted approximately 150 students in a single month, significantly expanding the Centre’s reach and visibility.</li>
+              <li>Encouraged dozens of students to adopt the Centre’s centralized career platform, driving stronger engagement in professional development.</li>
+              <li>Promoted Career Centre initiatives through targeted social-media campaigns and in-person outreach in both English and French.</li>
+              <li>Received specialized training on the ethics of coaching, confidentiality, and professionalism to ensure responsible peer support and student guidance.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Cybersecurity Mentor -->
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Cybersecurity Mentor</div>
+            <div class="timeline-org">CarletonU Hackathon · Carleton University</div>
+            <div class="timeline-meta">Oct. 2024 · Ottawa, Ontario</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Cybersecurity</span>
+              <span class="timeline-tag">Mentorship</span>
+              <span class="timeline-tag">Hackathon</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Mentored 50+ hackathon participants in developing security-focused projects, guiding teams to identify and resolve vulnerabilities in real time.</li>
+              <li>Advised secure coding practices (e.g., input validation, encryption standards) and data protection strategies, reducing risks in 85% of projects.</li>
+              <li>Simplified complex concepts (e.g., zero-trust architecture) through workshops, fostering rapid skill development under 24-hour deadlines.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ====== PROJECTS ====== -->
   <section id="projects">
     <div class="section-header">
@@ -1284,8 +1285,8 @@
             <span class="project-skill-pill">Visual storytelling</span>
           </div>
           <div class="project-actions">
-            <a class="chip chip-primary" href="https://devpost.com/software/early-warning-screening-support-ewss-pathway" target="_blank" rel="noopener">
-              🔗 View Devpost
+            <a class="chip chip-primary" href="YouthHomelessnessPOSTER.png" target="_blank">
+              🖼️ View poster (PNG)
             </a>
             <a class="chip" href="https://phuong24-tran.github.io/homelessness-sprint-interactive-poster/" target="_blank" rel="noopener">
               🧩 Interactive poster
@@ -1324,7 +1325,7 @@
             <span class="project-skill-pill">Multilingual design</span>
           </div>
           <div class="project-actions">
-            <!-- Add Devpost link when available -->
+            <span class="chip">📄 Poster coming soon</span>
           </div>
         </article>
 
@@ -1359,7 +1360,7 @@
             <span class="project-skill-pill">Policy communication</span>
           </div>
           <div class="project-actions">
-            <a class="chip chip-primary" href="BMTechlytics_Phase1.pdf" target="_blank">
+            <a class="chip chip-primary" href="BMTechlytics_Phase1 (1).pdf" target="_blank">
               📄 View poster (PDF)
             </a>
           </div>
@@ -1396,7 +1397,7 @@
             <span class="project-skill-pill">Stakeholder communication</span>
           </div>
           <div class="project-actions">
-            <a class="chip chip-primary" href="Healthcare_Cybersecurity_Strategy.pdf" target="_blank">
+            <a class="chip chip-primary" href="Healthcare Cybersecurity Strategy (2).pdf" target="_blank">
               📄 View strategy poster (PDF)
             </a>
           </div>
@@ -1433,7 +1434,7 @@
             <span class="project-skill-pill">Case structuring</span>
           </div>
           <div class="project-actions">
-            <a class="chip chip-primary" href="AidEx_HealthSync.pdf" target="_blank">
+            <a class="chip chip-primary" href="AidEx - HealthSync_v1 (1).pdf" target="_blank">
               📄 View case poster (PDF)
             </a>
           </div>
@@ -1469,7 +1470,7 @@
             <span class="project-skill-pill">Pitching</span>
           </div>
           <div class="project-actions">
-            <!-- Add PDF link when ready -->
+            <span class="chip">📄 View deck (coming soon)</span>
           </div>
         </article>
 
@@ -1506,7 +1507,7 @@
           </div>
 
           <div class="project-actions">
-            <a class="chip">📄 View deck (coming soon)</a>
+            <span class="chip">📄 View deck (coming soon)</span>
           </div>
         </article>
 
@@ -1543,7 +1544,7 @@
           </div>
 
           <div class="project-actions">
-            <a class="chip">📄 View deck (coming soon)</a>
+            <span class="chip">📄 View deck (coming soon)</span>
           </div>
         </article>
 
@@ -1578,7 +1579,7 @@
           </div>
 
           <div class="project-actions">
-            <a class="chip">📄 View PDF (coming soon)</a>
+            <span class="chip">📄 View PDF (coming soon)</span>
           </div>
         </article>
 
@@ -1613,7 +1614,9 @@
           </div>
 
           <div class="project-actions">
-            <a class="chip">📄 View deck (coming soon)</a>
+            <a class="chip chip-primary" href="UOCA CASE_TEAM AMBER (2) (1) (2).pdf" target="_blank">
+              📄 View case deck (PDF)
+            </a>
           </div>
         </article>
 
@@ -1699,7 +1702,6 @@
   </footer>
 </div>
 
-<!-- ====== INTERACTION SCRIPTS ====== -->
 <script>
   // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
