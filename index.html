@@ -9,7 +9,6 @@
 
   <!-- ====== BASE STYLES ====== -->
   <style>
-    
     :root {
       --bg: #020617;
       --bg-alt: #0b1220;
@@ -337,16 +336,16 @@
 
     .hero-card {
       width: 100%;
-      max-width: 360px;
+      max-width: 380px;
       border-radius: 26px;
       background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 46%),
-        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 1));
       border: 1px solid rgba(148, 163, 184, 0.45);
       box-shadow: var(--shadow-soft);
-      padding: 1.15rem 1.15rem 1.1rem;
+      padding: 1.3rem 1.2rem 1.2rem;
       display: grid;
-      grid-template-columns: 1.05fr 1.4fr;
-      gap: 0.9rem;
+      grid-template-columns: 1.05fr 1.3fr;
+      gap: 1rem;
       position: relative;
       overflow: hidden;
     }
@@ -366,7 +365,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
     .hero-card-label {
@@ -387,9 +386,24 @@
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(148, 163, 184, 0.6);
       color: #e5e7eb;
+      gap: 0.3rem;
     }
 
     .hero-card-pill strong {
+      color: #f9fafb;
+    }
+
+    .hero-card-roles {
+      margin-top: 0.4rem;
+      padding-top: 0.4rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .hero-card-roles strong {
       color: #f9fafb;
     }
 
@@ -398,8 +412,8 @@
       z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
-      font-size: 0.72rem;
+      gap: 0.4rem;
+      font-size: 0.75rem;
       color: rgba(209, 213, 219, 0.9);
     }
 
@@ -414,24 +428,14 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       opacity: 0.7;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
     }
 
     .hero-metric-value {
       font-weight: 600;
-    }
-
-    .hero-card-roles {
-      margin-top: 0.4rem;
-      padding-top: 0.4rem;
-      border-top: 1px dashed rgba(148, 163, 184, 0.4);
-      font-size: 0.72rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-
-    .hero-card-roles strong {
-      color: #f9fafb;
+      text-align: right;
     }
 
     /* ====== SECTIONS ====== */
@@ -697,7 +701,7 @@
     }
 
     .project-actions {
-      margin-top: 0.65rem;
+      margin-top: 0.5rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
@@ -733,77 +737,105 @@
       color: #e5e7eb;
     }
 
-    /* Skills */
+    /* Skills unlocked inside projects */
 
-    .skills-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-      gap: 1.3rem;
-    }
-
-    .skill-group-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+    .project-skills {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.8rem;
+      gap: 0.3rem;
+      align-items: center;
     }
 
-    .skill-pill {
-      padding: 0.3rem 0.7rem;
+    .project-skills-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    .project-skill-pill {
+      padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.98);
-      color: var(--text-muted);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 0.74rem;
     }
 
-    /* Contact */
+    /* Fun facts & contact */
 
-    .contact-grid {
+    .fun-contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
       gap: 1.5rem;
       font-size: 0.9rem;
       color: var(--text-muted);
     }
 
-    .contact-cta {
-      line-height: 1.8;
+    .fun-facts-heading {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
     }
 
-    .contact-pill-row {
-      margin-top: 0.9rem;
+    .fun-facts-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.45rem;
+    }
+
+    .fun-facts-list li {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      align-items: flex-start;
+      font-size: 0.88rem;
+    }
+
+    .fun-facts-icon {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .contact-intro {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-button-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
-    .contact-pill {
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.98);
-      font-size: 0.8rem;
+    .contact-button {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.98);
+      font-size: 0.86rem;
       cursor: pointer;
       transition:
         background var(--transition-fast),
-        color var(--transition-fast),
         border-color var(--transition-fast),
+        color var(--transition-fast),
         transform var(--transition-fast);
     }
 
-    .contact-pill:hover {
-      background: rgba(15, 23, 42, 1);
+    .contact-button.primary {
+      border-color: rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.98));
+      color: #e5e7eb;
+    }
+
+    .contact-button:hover {
       border-color: var(--accent);
       transform: translateY(-1px);
       color: #e5e7eb;
@@ -857,8 +889,7 @@
         max-width: 100%;
       }
       .about-layout,
-      .skills-layout,
-      .contact-grid,
+      .fun-contact-grid,
       .timeline-item {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -900,9 +931,8 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-         <li><a href="website-request.html" class="nav-link">Build Your Own Website</a></li>
+        <li><a href="#contact" class="nav-link">Fun Facts & Contact</a></li>
+        <li><a href="website-request.html" class="nav-link">Build Your Own Website</a></li>
       </ul>
     </nav>
   </div>
@@ -943,7 +973,7 @@
           </a>
           <a href="#contact" class="btn btn-secondary">
             <span class="icon">🤝</span>
-            <span>Contact / Connect</span>
+            <span>Let’s connect</span>
           </a>
         </div>
       </div>
@@ -951,7 +981,6 @@
       <div class="hero-right">
         <!-- Profile image -->
         <div class="hero-photo-wrap">
-          <!-- Make sure profile.jpg is in the same folder as this HTML -->
           <img src="profile.jpg" alt="Portrait of Phuong Tran" class="hero-photo" />
         </div>
 
@@ -961,27 +990,28 @@
             <div>
               <div class="hero-card-label">At a glance</div>
               <div class="hero-card-pill">
+                <span>🎓</span>
                 <strong>2025</strong>&nbsp;· Student &amp; builder
               </div>
             </div>
             <div class="hero-card-roles">
               <div><strong>Research Assistant</strong> · Tech governance &amp; AI policy · Telfer</div>
-              <div><strong>Digital Transformation Intern</strong> · GreenVeil Packaging</div>
-              <div><strong>Regional Mentor &amp; Career Coach</strong> · Supporting international &amp; Telfer students</div>
+              <div><strong>Digital Transformation / Marketing Intern</strong> · GreenVeil Packaging</div>
+              <div><strong>Regional Mentor (Asia)</strong> · Supporting international students</div>
             </div>
           </div>
 
           <div class="hero-card-metric-col">
             <div class="hero-metric-row">
-              <div class="hero-metric-label">Comps</div>
+              <div class="hero-metric-label">🏅 Comps</div>
               <div class="hero-metric-value">10+ hackathons &amp; case comps</div>
             </div>
             <div class="hero-metric-row">
-              <div class="hero-metric-label">Top results</div>
-              <div class="hero-metric-value">Multiple wins &amp; podiums</div>
+              <div class="hero-metric-label">⭐ Top results</div>
+              <div class="hero-metric-value">Wins &amp; podium finishes</div>
             </div>
             <div class="hero-metric-row">
-              <div class="hero-metric-label">Focus</div>
+              <div class="hero-metric-label">🎯 Focus</div>
               <div class="hero-metric-value">Research · Digital policy · UX/data</div>
             </div>
           </div>
@@ -1004,7 +1034,7 @@
         <div class="about-text">
           <p>
             I’m an Honours Bachelor of Commerce student in <strong>Business Technology Management</strong>
-            (French Immersion) at the University of Ottawa’s Telfer School of Management.
+            at the University of Ottawa’s Telfer School of Management.
             I care about how <strong>AI, data, and digital infrastructure</strong> can be used responsibly
             to improve public-sector systems, sustainability, and everyday user experiences.
           </p>
@@ -1019,7 +1049,7 @@
           <div class="about-item">
             <div class="about-item-title">Education</div>
             <p>
-              Honours BCom (Business Technology Management, French Immersion),
+              Honours BCom (Business Technology Management),
               Telfer School of Management – University of Ottawa.
             </p>
           </div>
@@ -1032,7 +1062,7 @@
           </div>
           <div class="about-item">
             <div class="about-item-title">Languages</div>
-            <p>English · French (immersion) · Vietnamese · Japanese (JLPT-track).</p>
+            <p>English · Vietnamese · Japanese (JLPT-track) · French.</p>
           </div>
           <div class="about-item">
             <div class="about-item-title">What I enjoy</div>
@@ -1058,105 +1088,154 @@
     <div class="section-body reveal">
       <div class="timeline">
 
+        <!-- Research Assistant -->
         <article class="timeline-item">
           <div>
-            <div class="timeline-role">Research Assistant – AI, Policy &amp; Equity</div>
-            <div class="timeline-org">Telfer School of Management · University of Ottawa</div>
-            <div class="timeline-meta">2024–2025 · Ottawa / Remote</div>
+            <div class="timeline-role">Research Assistant</div>
+            <div class="timeline-org">University of Ottawa, Telfer School of Management</div>
+            <div class="timeline-meta">Oct. 2025 — Present · Ottawa, Ontario</div>
             <div class="timeline-tags">
-              <span class="timeline-tag">AI &amp; labour markets</span>
-              <span class="timeline-tag">Equity &amp; public policy</span>
-              <span class="timeline-tag">Data storytelling</span>
+              <span class="timeline-tag">Tech governance</span>
+              <span class="timeline-tag">AI &amp; policy</span>
+              <span class="timeline-tag">Data visualization</span>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Co-developed a visual report on <strong>AI and the future of work in Canada</strong>, combining exposure indices, labour-market projections, and equity lenses for public-sector decision-makers.</li>
-              <li>Designed infographics and briefs that translate complex quantitative analysis into accessible narratives for non-technical audiences.</li>
+              <li>Conducted policy analysis on ethical and legal implications of emerging technologies (AI, facial recognition), contributing to research on regulatory responses like the EU’s Clearview AI ban.</li>
+              <li>Assessed cybersecurity and data privacy risks by analyzing international data transfer frameworks (e.g., Data Bridge) for GDPR compliance and identifying vulnerabilities and governance gaps.</li>
+              <li>Synthesized complex qualitative and quantitative research into actionable insights, supporting the production of academic papers and reports for stakeholders on technology governance and digital policy.</li>
+              <li>Designed and generated data visualizations and infographics to translate dense research findings into clear, accessible graphics for presentations and publications, enhancing data comprehension and communication.</li>
             </ul>
           </div>
         </article>
 
+        <!-- Digital Transformation / Marketing Intern -->
         <article class="timeline-item">
           <div>
-            <div class="timeline-role">Digital Transformation Intern</div>
-            <div class="timeline-org">GreenVeil Packaging</div>
-            <div class="timeline-meta">2024 · Remote</div>
+            <div class="timeline-role">Digital Transformation / Marketing Intern</div>
+            <div class="timeline-org">GreenVeil Packaging, Advanced Research Complex</div>
+            <div class="timeline-meta">Oct. 2025 — Present · Ottawa, Ontario</div>
             <div class="timeline-tags">
               <span class="timeline-tag">Sustainability</span>
               <span class="timeline-tag">Digital marketing</span>
-              <span class="timeline-tag">Process design</span>
+              <span class="timeline-tag">Data-to-content</span>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Supported digital workflows and storytelling for a sustainable packaging startup, including product positioning and content for antimicrobial &amp; eco-friendly lines.</li>
-              <li>Created visual assets and documents that help non-technical partners understand the impact of the technology.</li>
+              <li>Transformed raw data into clear, audience-specific marketing content for digital and print materials (e.g., brochures, flyers) to effectively communicate brand value and initiatives.</li>
+              <li>Streamlined digital content creation processes by structuring disparate data sources, improving the efficiency and consistency of material production for stakeholder engagement.</li>
+              <li>Applied a user-centric approach to design, ensuring all translated data and messaging were tailored to target demographics to maximize impact and clarity.</li>
             </ul>
           </div>
         </article>
 
+        <!-- Career Development Ambassador & Coach -->
         <article class="timeline-item">
           <div>
-            <div class="timeline-role">Student Leader · Mentor &amp; Career Coach</div>
-            <div class="timeline-org">Telfer School of Management &amp; University of Ottawa</div>
-            <div class="timeline-meta">Ongoing</div>
+            <div class="timeline-role">Career Development Ambassador &amp; Coach</div>
+            <div class="timeline-org">Career Centre, Telfer School of Management, University of Ottawa</div>
+            <div class="timeline-meta">Sept. 2025 — Present · Ottawa, Ontario</div>
             <div class="timeline-tags">
               <span class="timeline-tag">Career coaching</span>
-              <span class="timeline-tag">Peer mentorship</span>
-              <span class="timeline-tag">Work-integrated learning</span>
+              <span class="timeline-tag">Student support</span>
+              <span class="timeline-tag">Bilingual outreach</span>
             </div>
           </div>
           <div class="timeline-body">
             <ul>
-              <li>Guided international and first-year students through co-op, case competitions, and academic planning.</li>
-              <li>Shared resources, templates, and “behind the scenes” to make opportunities more accessible to others.</li>
+              <li>Delivered bilingual, personalized résumé critiques to nearly 30 students within two hours, improving résumé quality and job-search readiness.</li>
+              <li>Supported walk-in sessions that attracted approximately 150 students in a single month, significantly expanding the Centre’s reach and visibility.</li>
+              <li>Encouraged dozens of students to adopt the Centre’s centralized career platform, driving stronger engagement in professional development.</li>
+              <li>Promoted Career Centre initiatives through targeted social-media campaigns and in-person outreach in both English and French.</li>
+              <li>Received specialized training on the ethics of coaching, confidentiality, and professionalism to ensure responsible peer support and student guidance.</li>
             </ul>
           </div>
         </article>
-        <!-- Regional Mentor – University of Ottawa -->
-<article class="timeline-item">
-  <div>
-    <div class="timeline-role">Regional Mentor (Asia)</div>
-    <div class="timeline-org">Student Affairs · University of Ottawa</div>
-    <div class="timeline-meta">May 2025 — Present · Ottawa, ON</div>
-    <div class="timeline-tags">
-      <span class="timeline-tag">Student Support</span>
-      <span class="timeline-tag">International Students</span>
-      <span class="timeline-tag">Community Building</span>
-    </div>
-  </div>
-  <div class="timeline-body">
-    <ul>
-      <li>Support Asian international students with enrollment, study strategies, and academic transition.</li>
-      <li>Provide empathetic support for culture shock, stress, and homesickness.</li>
-      <li>Connect students to advising, mental health, and learning services.</li>
-      <li>Organize community-building and social integration activities.</li>
-    </ul>
-  </div>
-</article>
 
-<!-- Board Member – Algonquin College -->
-<article class="timeline-item">
-  <div>
-    <div class="timeline-role">Board Member</div>
-    <div class="timeline-org">Student Association · Algonquin College</div>
-    <div class="timeline-meta">Feb. 2024 — Jul. 2024 · Ottawa, ON</div>
-    <div class="timeline-tags">
-      <span class="timeline-tag">Governance</span>
-      <span class="timeline-tag">Student Advocacy</span>
-      <span class="timeline-tag">International Students</span>
-    </div>
-  </div>
-  <div class="timeline-body">
-    <ul>
-      <li>Represented the interests of 20,000+ full-time students in discussions with college administration.</li>
-      <li>Collaborated with eight board members, dedicating 150+ hours per term to student priorities.</li>
-      <li>Co-chaired the International Student Advisory Committee.</li>
-      <li>Helped students navigate enrollment, resources, and campus services.</li>
-    </ul>
-  </div>
-</article>
+        <!-- Cybersecurity Mentor -->
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Cybersecurity Mentor</div>
+            <div class="timeline-org">CarletonU Hackathon · Carleton University</div>
+            <div class="timeline-meta">Oct. 2024 · Ottawa, Ontario</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Cybersecurity</span>
+              <span class="timeline-tag">Mentorship</span>
+              <span class="timeline-tag">Hackathon</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Mentored 50+ hackathon participants in developing security-focused projects, guiding teams to identify and resolve vulnerabilities in real time.</li>
+              <li>Advised secure coding practices (e.g., input validation, encryption standards) and data protection strategies, reducing risks in 85% of projects.</li>
+              <li>Simplified complex concepts (e.g., zero-trust architecture) through workshops, fostering rapid skill development under 24-hour deadlines.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Regional Mentor – University of Ottawa -->
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Regional Mentor (Asia)</div>
+            <div class="timeline-org">Student Affairs · University of Ottawa</div>
+            <div class="timeline-meta">May 2025 — Present · Ottawa, Ontario</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Student support</span>
+              <span class="timeline-tag">International students</span>
+              <span class="timeline-tag">Community building</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Support Asian international students with enrollment, study strategies, and academic transition.</li>
+              <li>Provide empathetic support for culture shock, stress, and homesickness.</li>
+              <li>Connect students to advising, mental health, and learning services.</li>
+              <li>Help organize community-building and social integration activities.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Board Member – Algonquin College -->
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">Board Member</div>
+            <div class="timeline-org">Student Association · Algonquin College</div>
+            <div class="timeline-meta">Feb. 2024 — Jul. 2024 · Ottawa, Ontario</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Governance</span>
+              <span class="timeline-tag">Student advocacy</span>
+              <span class="timeline-tag">International students</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Represented the interests of 20,000+ full-time students in discussions with college administration.</li>
+              <li>Collaborated with eight board members, dedicating 150+ hours per term to student priorities.</li>
+              <li>Co-chaired the International Student Advisory Committee.</li>
+              <li>Helped students navigate enrollment, resources, and campus services.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- On-call Proctor – ADM 1300 -->
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-role">On-call Proctor – ADM 1300</div>
+            <div class="timeline-org">Telfer School of Management · University of Ottawa</div>
+            <div class="timeline-meta">Upcoming · Ottawa, Ontario</div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Academic integrity</span>
+              <span class="timeline-tag">Assessment support</span>
+            </div>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>On-call proctor for ADM 1300 course assessments, supporting instructors and students during exams.</li>
+            </ul>
+          </div>
+        </article>
 
       </div>
     </div>
@@ -1198,16 +1277,19 @@
               and prevention levers into an accessible, clickable journey for educators and service providers.
             </p>
           </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Systems mapping</span>
+            <span class="project-skill-pill">Policy framing</span>
+            <span class="project-skill-pill">Visual storytelling</span>
+          </div>
           <div class="project-actions">
-            <!-- Replace href with your actual Devpost URL if you prefer -->
             <a class="chip chip-primary" href="https://devpost.com/software/early-warning-screening-support-ewss-pathway" target="_blank" rel="noopener">
               🔗 View Devpost
             </a>
             <a class="chip" href="https://phuong24-tran.github.io/homelessness-sprint-interactive-poster/" target="_blank" rel="noopener">
               🧩 Interactive poster
             </a>
-            <!-- Optional: link PDFs if you export them -->
-            <!-- <a class="chip" href="EWSS_Poster.pdf" target="_blank">📄 View PDF poster</a> -->
           </div>
         </article>
 
@@ -1235,10 +1317,14 @@
               safely route users toward appropriate instructions or escalation paths.
             </p>
           </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Prompt design</span>
+            <span class="project-skill-pill">UX flows</span>
+            <span class="project-skill-pill">Multilingual design</span>
+          </div>
           <div class="project-actions">
-            <!-- Plug your Devpost link here if you have one -->
-            <!-- <a class="chip chip-primary" href="UOttaHack_Devpost_URL" target="_blank">🔗 Devpost</a> -->
-            <!-- <a class="chip" href="AI_Emergency_Rescuer_Poster.pdf" target="_blank">📄 View PDF</a> -->
+            <!-- Add Devpost link when available -->
           </div>
         </article>
 
@@ -1266,8 +1352,13 @@
               a single visual story for policymakers and public-sector leaders.
             </p>
           </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Data storytelling</span>
+            <span class="project-skill-pill">Equity analysis</span>
+            <span class="project-skill-pill">Policy communication</span>
+          </div>
           <div class="project-actions">
-            <!-- Update to match the filename you host -->
             <a class="chip chip-primary" href="BMTechlytics_Phase1.pdf" target="_blank">
               📄 View poster (PDF)
             </a>
@@ -1297,6 +1388,12 @@
               I worked on <strong>system framing, impact visuals, and risk communication</strong>, connecting human-factor issues
               (like phishing susceptibility and downtime) with practical AR workflows for teams.
             </p>
+          </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Cyber risk framing</span>
+            <span class="project-skill-pill">AR concept design</span>
+            <span class="project-skill-pill">Stakeholder communication</span>
           </div>
           <div class="project-actions">
             <a class="chip chip-primary" href="Healthcare_Cybersecurity_Strategy.pdf" target="_blank">
@@ -1329,6 +1426,12 @@
               PIPEDA compliance, and practical pathways for government adoption.
             </p>
           </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Architecture thinking</span>
+            <span class="project-skill-pill">Privacy-by-design</span>
+            <span class="project-skill-pill">Case structuring</span>
+          </div>
           <div class="project-actions">
             <a class="chip chip-primary" href="AidEx_HealthSync.pdf" target="_blank">
               📄 View case poster (PDF)
@@ -1359,273 +1462,237 @@
               grounded in feasible activation steps.
             </p>
           </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Brand storytelling</span>
+            <span class="project-skill-pill">Customer journey design</span>
+            <span class="project-skill-pill">Pitching</span>
+          </div>
           <div class="project-actions">
-            <!-- Example placeholder if you export a deck -->
-            <!-- <a class="chip chip-primary" href="Loreal_Brandstorm_Deck.pdf" target="_blank">📄 View deck (PDF)</a> -->
+            <!-- Add PDF link when ready -->
           </div>
         </article>
-<!-- CFA Research Challenge -->
-<article class="project-card" data-expand-on-click>
-  <div class="project-title-row">
-    <h3 class="project-name">CFA Research Challenge 2024</h3>
-    <span class="project-badge">📘 Representing uOttawa</span>
-  </div>
-  <div class="project-meta">CFA Institute · Equity Research</div>
 
-  <div class="project-tags">
-    <span class="project-tag">Finance</span>
-    <span class="project-tag">Valuation</span>
-    <span class="project-tag">Equity Research</span>
-  </div>
+        <!-- CFA Research Challenge -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">CFA Research Challenge 2024</h3>
+            <span class="project-badge">📘 Representing uOttawa</span>
+          </div>
+          <div class="project-meta">CFA Institute · Equity Research</div>
 
-  <p class="project-summary">
-    Represented the University of Ottawa in a global-standard equity research competition.
-  </p>
+          <div class="project-tags">
+            <span class="project-tag">Finance</span>
+            <span class="project-tag">Valuation</span>
+            <span class="project-tag">Equity research</span>
+          </div>
 
-  <div class="project-extra">
-    <ul>
-      <li>Performed valuation modelling, industry analysis, and risk assessment.</li>
-      <li>Co-authored a research report aligned with CFA Institute standards.</li>
-    </ul>
-  </div>
+          <p class="project-summary">
+            Represented the University of Ottawa in a global-standard equity research competition.
+          </p>
 
-  <div class="project-actions">
-    <a class="chip">📄 View Deck (Coming Soon)</a>
-  </div>
-</article>
-<!-- Tap-to-Connect NFC -->
-<article class="project-card" data-expand-on-click>
-  <div class="project-title-row">
-    <h3 class="project-name">Tap-to-Connect NFC</h3>
-    <span class="project-badge">🥇 Highest Votes</span>
-  </div>
-  <div class="project-meta">The Crunch – uOttawa, Carleton, Algonquin, La Cité</div>
+          <div class="project-extra">
+            <ul>
+              <li>Performed valuation modelling, industry analysis, and risk assessment.</li>
+              <li>Co-authored a research report aligned with CFA Institute standards.</li>
+            </ul>
+          </div>
 
-  <div class="project-tags">
-    <span class="project-tag">NFC</span>
-    <span class="project-tag">Entrepreneurship</span>
-    <span class="project-tag">Pitching</span>
-  </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Equity analysis</span>
+            <span class="project-skill-pill">Financial modelling</span>
+            <span class="project-skill-pill">Professional writing</span>
+          </div>
 
-  <p class="project-summary">Earned top public vote among 14+ teams with a fast NFC-based instant profile-sharing tool.</p>
+          <div class="project-actions">
+            <a class="chip">📄 View deck (coming soon)</a>
+          </div>
+        </article>
 
-  <div class="project-extra">
-    <ul>
-      <li>Built a tap-based instant profile connector.</li>
-      <li>Delivered top-ranked 30-second pitch.</li>
-    </ul>
-  </div>
+        <!-- Tap-to-Connect NFC -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">Tap-to-Connect NFC</h3>
+            <span class="project-badge">🥇 Highest Votes</span>
+          </div>
+          <div class="project-meta">The Crunch – uOttawa, Carleton, Algonquin, La Cité</div>
 
-  <div class="project-actions">
-    <a class="chip">📄 View Deck (Coming Soon)</a>
-  </div>
-</article>
-<!-- Leaf-Based Biodegradable Utensils -->
-<article class="project-card" data-expand-on-click>
-  <div class="project-title-row">
-    <h3 class="project-name">Leaf-Based Biodegradable Utensils</h3>
-    <span class="project-badge">🌿 Concept Development</span>
-  </div>
-  <div class="project-meta">Ideas Lab: Sustainability</div>
+          <div class="project-tags">
+            <span class="project-tag">NFC</span>
+            <span class="project-tag">Entrepreneurship</span>
+            <span class="project-tag">Pitching</span>
+          </div>
 
-  <div class="project-tags">
-    <span class="project-tag">Eco Design</span>
-    <span class="project-tag">Sustainability</span>
-  </div>
+          <p class="project-summary">
+            Earned top public vote among 14+ teams with a fast NFC-based instant profile-sharing tool.
+          </p>
 
-  <p class="project-summary">
-    Proposed leaf-based utensils to replace single-use plastics.
-  </p>
+          <div class="project-extra">
+            <ul>
+              <li>Built a tap-based instant profile connector.</li>
+              <li>Delivered a top-ranked 30-second pitch.</li>
+            </ul>
+          </div>
 
-  <div class="project-extra">
-    <ul>
-      <li>Explored rapid decomposition & eco-friendly sourcing.</li>
-      <li>Analyzed pricing and supply-chain feasibility.</li>
-    </ul>
-  </div>
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Rapid prototyping</span>
+            <span class="project-skill-pill">Micro-pitching</span>
+            <span class="project-skill-pill">Product thinking</span>
+          </div>
 
-  <div class="project-actions">
-    <a class="chip">📄 View PDF (Coming Soon)</a>
-  </div>
-</article>
-<!-- PSPC Supply Chain Strategy -->
-<article class="project-card" data-expand-on-click>
-  <div class="project-title-row">
-    <h3 class="project-name">PSPC Supply Chain Strategy</h3>
-    <span class="project-badge">🥉 3rd Place</span>
-  </div>
-  <div class="project-meta">uOCA Case Competition · PSPC</div>
+          <div class="project-actions">
+            <a class="chip">📄 View deck (coming soon)</a>
+          </div>
+        </article>
 
-  <div class="project-tags">
-    <span class="project-tag">Supply Chain</span>
-    <span class="project-tag">Federal Policy</span>
-  </div>
+        <!-- Leaf-Based Biodegradable Utensils -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">Leaf-Based Biodegradable Utensils</h3>
+            <span class="project-badge">🌿 Concept</span>
+          </div>
+          <div class="project-meta">Ideas Lab: Sustainability</div>
 
-  <p class="project-summary">
-    Developed resiliency recommendations for federal supply chains.
-  </p>
+          <div class="project-tags">
+            <span class="project-tag">Eco design</span>
+            <span class="project-tag">Sustainability</span>
+          </div>
 
-  <div class="project-extra">
-    <ul>
-      <li>Analyzed vendor diversification & geopolitical risks.</li>
-      <li>Built structured recommendations under time pressure.</li>
-    </ul>
-  </div>
+          <p class="project-summary">
+            Proposed leaf-based utensils to replace single-use plastics.
+          </p>
 
-  <div class="project-actions">
-    <a class="chip">📄 View Deck (Coming Soon)</a>
-  </div>
-</article>
+          <div class="project-extra">
+            <ul>
+              <li>Explored rapid decomposition and eco-friendly sourcing.</li>
+              <li>Analyzed pricing and supply-chain feasibility.</li>
+            </ul>
+          </div>
+
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Sustainable design</span>
+            <span class="project-skill-pill">Market sizing</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="chip">📄 View PDF (coming soon)</a>
+          </div>
+        </article>
+
+        <!-- PSPC Supply Chain Strategy -->
+        <article class="project-card" data-expand-on-click>
+          <div class="project-title-row">
+            <h3 class="project-name">PSPC Supply Chain Strategy</h3>
+            <span class="project-badge">🥉 3rd Place</span>
+          </div>
+          <div class="project-meta">uOCA Case Competition · PSPC</div>
+
+          <div class="project-tags">
+            <span class="project-tag">Supply chain</span>
+            <span class="project-tag">Federal policy</span>
+          </div>
+
+          <p class="project-summary">
+            Developed resiliency recommendations for federal supply chains.
+          </p>
+
+          <div class="project-extra">
+            <ul>
+              <li>Analyzed vendor diversification and geopolitical risks.</li>
+              <li>Built structured recommendations under time pressure.</li>
+            </ul>
+          </div>
+
+          <div class="project-skills">
+            <span class="project-skills-label">Skills unlocked</span>
+            <span class="project-skill-pill">Risk analysis</span>
+            <span class="project-skill-pill">Executive structuring</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="chip">📄 View deck (coming soon)</a>
+          </div>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ====== SKILLS ====== -->
-  <section id="skills">
+  <!-- ====== FUN FACTS & CONTACT ====== -->
+  <section id="contact">
     <div class="section-header">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Fun Facts &amp; Contact</h2>
       <p class="section-caption">
-        A snapshot of tools and strengths I lean on most in projects, research, and competitions.
+        A few snapshots beyond my résumé – and how to get in touch if you’d like to collaborate or connect.
       </p>
     </div>
 
     <div class="section-body reveal">
-      <div class="skills-layout">
+      <div class="fun-contact-grid">
+        <!-- Fun facts column -->
         <div>
-          <div class="skill-group-title">Tech, data &amp; tools</div>
-          <div class="skill-pill-row">
-            <span class="skill-pill">Excel &amp; advanced formulas</span>
-            <span class="skill-pill">Python (pandas, notebooks)</span>
-            <span class="skill-pill">SQL basics</span>
-            <span class="skill-pill">Power BI / data viz</span>
-            <span class="skill-pill">Figma &amp; UX flows</span>
-            <span class="skill-pill">Canva &amp; visual storytelling</span>
-            <span class="skill-pill">Kepler.gl / maps</span>
-          </div>
-
-          <div class="skill-group-title" style="margin-top: 1.1rem;">Methods &amp; approaches</div>
-          <div class="skill-pill-row">
-            <span class="skill-pill">Systems thinking</span>
-            <span class="skill-pill">User-centric design</span>
-            <span class="skill-pill">Desk research &amp; synthesis</span>
-            <span class="skill-pill">Policy &amp; regulation scanning</span>
-            <span class="skill-pill">Storyboarding &amp; pitching</span>
-          </div>
+          <h3 class="fun-facts-heading">Fun facts about me</h3>
+          <ul class="fun-facts-list">
+            <li>
+              <span class="fun-facts-icon">🎹</span>
+              <span>Grade 8 Piano – Trinity College London.</span>
+            </li>
+            <li>
+              <span class="fun-facts-icon">🏊‍♀️</span>
+              <span>Former competitive swimmer with 30+ medals, including national-level events.</span>
+            </li>
+            <li>
+              <span class="fun-facts-icon">🛡️</span>
+              <span>Passionate about cybersecurity, digital identity, and responsible AI.</span>
+            </li>
+            <li>
+              <span class="fun-facts-icon">🌱</span>
+              <span>Drawn to sustainability and circular design – especially in packaging and public systems.</span>
+            </li>
+            <li>
+              <span class="fun-facts-icon">🤝</span>
+              <span>Love helping other students navigate co-op, competitions, and early-career choices.</span>
+            </li>
+          </ul>
         </div>
 
+        <!-- Contact column -->
         <div>
-          <div class="skill-group-title">Soft skills &amp; leadership</div>
-          <div class="skill-pill-row">
-            <span class="skill-pill">Public speaking &amp; presenting</span>
-            <span class="skill-pill">Team facilitation</span>
-            <span class="skill-pill">Peer coaching &amp; mentoring</span>
-            <span class="skill-pill">Cross-cultural collaboration</span>
-            <span class="skill-pill">Time-boxed problem solving</span>
+          <p class="contact-intro">
+            I’m always open to opportunities related to
+            <strong>business technology, cybersecurity, digital policy, product / innovation, and student support</strong>.
+            If you’d like to collaborate, chat about a competition, or discuss an opportunity, let’s connect.
+          </p>
+
+          <div class="contact-button-row">
+            <a href="mailto:phtranworkmail@gmail.com" class="contact-button primary" target="_blank">
+              <span>📧</span>
+              <span>Email</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/phuongtrn" class="contact-button" target="_blank" rel="noopener">
+              <span>💼</span>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://calendly.com/phtranworkmail/30min"
+               class="contact-button"
+               target="_blank" rel="noopener">
+              <span>🗓️</span>
+              <span>Book a free 15 min</span>
+            </a>
           </div>
-          <div class="skill-group-title" style="margin-top: 1.1rem;">Domains I care about</div>
-          <div class="skill-pill-row">
-            <span class="skill-pill">AI &amp; the future of work</span>
-            <span class="skill-pill">Youth homelessness prevention</span>
-            <span class="skill-pill">Healthcare &amp; public systems</span>
-            <span class="skill-pill">Sustainability &amp; circularity</span>
-          </div>
+
+          <p class="contact-note">
+            Résumé download: coming soon – I’ll add a PDF link here as I continue to update this page.
+          </p>
         </div>
       </div>
     </div>
   </section>
-  
-<!-- ====== INTERESTS ====== -->
-<section id="interests">
-  <div class="section-header">
-    <h2 class="section-title">Interests & hobbies</h2>
-    <div class="section-caption">
-      What keeps me curious and balanced outside of work and school.
-    </div>
-  </div>
-
-  <div class="section-body reveal">
-    <div class="two-col">
-      <div>
-        <h3 style="margin: 0 0 0.3rem; font-size: 0.98rem;">Music & performance</h3>
-        <ul class="interest-list">
-          <li>Grade 8 Piano – Trinity College London.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 style="margin: 0 0 0.3rem; font-size: 0.98rem;">Sports & swimming</h3>
-        <ul class="interest-list">
-          <li>Competitive swimmer with 30+ medals, including national-level events.</li>
-        </ul>
-      </div>
-    </div>
-
-    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.9rem;">
-      I’m also passionate about <strong>cybersecurity, digital identity, sustainability, and student mentorship</strong> —
-      themes that show up across my competitions and projects.
-    </p>
-  </div>
-</section>
-
-<!-- ====== CONTACT ====== -->
-<section id="contact">
-  <a href="#" class="contact-pill">
-    📄 Download Résumé (Coming Soon)
-  </a>
-
-  <a href="https://calendly.com/phtranworkmail/30min"
-     class="contact-pill"
-     target="_blank">
-    🗓️ Book a Free 15-Minute Consultation
-  </a>
-
-  <div class="section-header">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-caption">
-      Whether it’s a case competition, internship, or collaboration idea – I’d love to hear from you.
-    </p>
-  </div>
-
-  <div class="section-body reveal">
-    <div class="contact-grid">
-      <div>
-        <p class="contact-cta">
-          I’m always open to opportunities related to
-          <strong>business technology, cybersecurity, digital policy, product / innovation, and student support</strong>.
-          If you’d like to collaborate, chat about a competition, or discuss an opportunity, feel free to reach out.
-        </p>
-
-        <div class="contact-pill-row">
-          <a href="mailto:phtranworkmail@gmail.com" class="contact-pill" target="_blank">
-            📧 <span>Email me</span>
-          </a>
-
-          <button type="button" class="contact-pill" id="copy-email-btn">
-            📋 <span id="copy-email-label">Copy email</span>
-          </button>
-
-          <a href="https://www.linkedin.com/in/phuongtrn" class="contact-pill"
-             target="_blank" rel="noopener">
-            💼 <span>LinkedIn</span>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0;">
-          This page is fully static – just HTML, CSS, and a tiny bit of JavaScript for interactions.
-          
-        </p>
-        <ul class="compact">
-        
-          <li>Update my experiences and education as my journey continues.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 
   <footer>
     © <span id="year"></span> Phuong Tran · Built with care &amp; updated over time.
@@ -1681,30 +1748,6 @@
       card.classList.toggle("is-open");
     });
   });
-
-  // Copy email to clipboard
-  const copyBtn = document.getElementById("copy-email-btn");
-  const copyLabel = document.getElementById("copy-email-label");
-  const email = "phtranworkmail@gmail.com";
-
-  if (copyBtn) {
-    copyBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(email);
-        const original = copyLabel.textContent;
-        copyLabel.textContent = "Copied!";
-        setTimeout(() => {
-          copyLabel.textContent = original;
-        }, 1600);
-      } catch (err) {
-        console.error("Copy failed", err);
-      }
-    });
-  }
 </script>
 </body>
 </html>
-
-
-
-
